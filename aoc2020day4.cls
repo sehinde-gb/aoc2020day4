@@ -10,8 +10,6 @@ Property iyr As %String(%JSONFIELDNAME = "iyr");
 /// initialise eyr
 Property eyr As %String(%JSONFIELDNAME = "eyr");
 
-
-
 ClassMethod Initialise()
 {
     
@@ -29,7 +27,7 @@ ClassMethod Initialise()
     do ..PassportProcess(pass1)
     do ..PassportProcess(pass2)
     do ..PassportProcess(pass3)
-    do ..PassportProcess(pass4)   
+    do ..PassportProcess(pass4)
 }
 
 ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass2 As %DynamicAbstractObject, pass3 As %DynamicAbstractObject, pass4 As %DynamicAbstractObject)
@@ -62,7 +60,6 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass
         write "We are unable to process incomplete passport submissions!",!
         set difference = 8 - mySize
         write "You need to fill in",! write difference,"field/s",!
-        
 }
 
 /// Set up import method to import the data and save it it an object
