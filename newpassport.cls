@@ -1,4 +1,4 @@
-Class aoc2020day4.Test Extends (%Persistent, %JSON.Adaptor)
+Class New.Passport Extends (%Persistent, %JSON.Adaptor)
 {
 
 /// initialise byr
@@ -87,7 +87,7 @@ ClassMethod Import(data)
 
 Storage Default
 {
-<Data name="TestDefaultData">
+<Data name="PassportDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
 </Value>
@@ -101,11 +101,11 @@ Storage Default
 <Value>eyr</Value>
 </Value>
 </Data>
-<DataLocation>^Passport.TestD</DataLocation>
-<DefaultData>TestDefaultData</DefaultData>
-<IdLocation>^Passport.TestD</IdLocation>
-<IndexLocation>^Passport.TestI</IndexLocation>
-<StreamLocation>^Passport.TestS</StreamLocation>
+<DataLocation>^New.PassportD</DataLocation>
+<DefaultData>PassportDefaultData</DefaultData>
+<IdLocation>^New.PassportD</IdLocation>
+<IndexLocation>^New.PassportI</IndexLocation>
+<StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
 
