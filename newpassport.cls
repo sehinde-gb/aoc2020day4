@@ -10,14 +10,19 @@ Property iyr As %String(%JSONFIELDNAME = "iyr");
 /// initialise eyr
 Property eyr As %String(%JSONFIELDNAME = "eyr");
 
+/// initialise hgt
 Property hgt As %String(%JSONFIELDNAME = "hgt");
 
+/// initialise hcl
 Property hcl As %String(%JSONFIELDNAME = "hcl");
 
+/// initialise ecl
 Property ecl As %String(%JSONFIELDNAME = "ecl");
 
+/// initialise pid
 Property pid As %String(%JSONFIELDNAME = "pid");
 
+/// initialise cid
 Property cid As %String(%JSONFIELDNAME = "cid");
 
 ClassMethod Initialise()
@@ -60,13 +65,15 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
     if (mySize >=8) {
         while iterator.%GetNext(.key, .value) {
         
-            write key_value, !     
+            write key_value, !
+               
         }
+            write !
+            write "No of completed fields is:",! 
+            write mySize, !
+            write !  
     }
-        write !
-        write "No of completed fields is:",! 
-        write mySize, !
-        write !
+       
         //write "We are unable to process incomplete passport submissions!",!
         //set difference = 8 - mySize
         //write "You need to fill in",! write difference,"field/s",!
