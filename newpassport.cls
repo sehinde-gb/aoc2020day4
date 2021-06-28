@@ -24,11 +24,11 @@ ClassMethod Initialise()
 {
     
     
-    set pass1 = {"byr:":"1937", "iyr:":"2017", "eyr:":"2020", "hgt:":"183cm", "hcl:":"#FFFFFD","ecl:":"grey", "pid:":"028048884","cid":"147"}
+    //set pass1 = {"byr:":"1937", "iyr:":"2017", "eyr:":"2020", "hgt:":"183cm", "hcl:":"#FFFFFD","ecl:":"grey", "pid:":"028048884","cid":"147"}
 
-    set pass2={"iyr:":"2013", "ecl:":"amb", "cid:":"350", "eyr:":"2023", "pid:":"028048884", "hcl:":"#cfa07d", "byr:":"1929"}
+    //set pass2={"iyr:":"2013", "ecl:":"amb", "cid:":"350", "eyr:":"2023", "pid:":"028048884", "hcl:":"#cfa07d", "byr:":"1929"}
 
-    set pass3={"ecl:":"grey","pid:":"860033327", "eyr:":"2020","hcl:":"#FFFFFD","byr:":"1937", "iyr:":"2017", "cid:":"147", "hgt:":"183cm"}
+    //set pass3={"ecl:":"grey","pid:":"860033327", "eyr:":"2020","hcl:":"#FFFFFD","byr:":"1937", "iyr:":"2017", "cid:":"147", "hgt:":"183cm"}
 
     set pass4 = {"hcl:":"#ae17e1", "iyr:":"2013", "eyr:":"2024", "ecl:":"brn", "pid:":"760753108","byr:":"1931", "hgt:":"179cm", "cid":"147"}
 
@@ -40,7 +40,7 @@ ClassMethod Initialise()
     do ..PassportProcess(pass4)
 }
 
-ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass2 As %DynamicAbstractObject, pass3 As %DynamicAbstractObject, pass4 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
 {
     write "Passport calculation process has started:",!
 
