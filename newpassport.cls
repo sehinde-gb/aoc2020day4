@@ -70,6 +70,8 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass
         write "We are unable to process incomplete passport submissions!",!
         set difference = 8 - mySize
         write "You need to fill in",! write difference,"field/s",!
+
+        do ..Import(pass1)
 }
 
 /// Set up import method to import the data and save it it an object
