@@ -33,27 +33,27 @@ ClassMethod Initialise()
 
     //set pass2={"iyr":"2013", "ecl":"amb", "cid":"350", "eyr":"2023", "pid":"028048884", "hcl":"#cfa07d", "byr":"1929"}
 
-    //set pass3={"ecl":"grey","pid":"860033327", "eyr":"2020","hcl":"#FFFFFD","byr":"1937", "iyr":"2017", "cid":"147", "hgt":"183cm"}
+    set pass3={"ecl":"grey","pid":"860033327", "eyr":"2020","hcl":"#FFFFFD","byr":"1937", "iyr":"2017", "cid":"147", "hgt":"183cm"}
 
-    set pass4 = {"hcl":"#ae17e1", "iyr":"2013", "eyr":"2024", "ecl":"brn", "pid":"760753108","byr":"1931", "hgt":"179cm", "cid":"147"}
+    //set pass4 = {"hcl":"#ae17e1", "iyr":"2013", "eyr":"2024", "ecl":"brn", "pid":"760753108","byr":"1931", "hgt":"179cm", "cid":"147"}
 
     /// Run the 4 passport process methods in sequence
 
     //do ..PassportProcess(pass1)
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
-    do ..PassportProcess(pass4)
+    do ..PassportProcess(pass3)
 }
 
-ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
 {
     write "Passport calculation process has started:",!
 
     /// set the iterators and the mysize variable
 
-    set iterator = pass4.%GetIterator()
+    set iterator = pass3.%GetIterator()
 
-    set mySize = pass4.%Size()
+    set mySize = pass3.%Size()
     
     write "Number of passport fields filled in: ",! 
 
@@ -71,30 +71,39 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
             write !
             write "No of completed fields is:",! 
             write mySize, !
-            write !  
-    }
-       
-        //write "We are unable to process incomplete passport submissions!",!
-        //set difference = 8 - mySize
-        //write "You need to fill in",! write difference,"field/s",!
+            write !
+        } ELSE {
+            write "We are unable to process incomplete passport submissions!",!
 
-        do ..Import(pass4)
+            set difference = 8 - mySize
+
+            write "You need to fill in",! write difference,"field/s",!
+    }
+    
+    write "Passport calculation process has ended:",!
+    /// call the import method to save our newly constructed data.
+    do ..Import(pass3)
 }
 
 /// Set up import method to import the data and save it it an object
-ClassMethod Import(pass4)
+ClassMethod Import(pass3)
 {
+        write "We are saving the object now:",!
+        /// create new object and set it to import as a json object 
         set obj =..%New()
-        set sts=obj.%JSONImport(pass4,"")
+        set sts=obj.%JSONImport(pass3,"")
 
+        /// save the object
         if sts {
         set sts = obj.%Save()
         
+        /// inform everyone that we have saved the object
         if sts {
             write "Saved, ID=",obj.%Id(),!
             quit 1
             
         } else {
+
             write "Not saved, Err=",$system.Status.GetOneErrorText(sts),!
             quit 0
         }
