@@ -10,6 +10,16 @@ Property iyr As %String(%JSONFIELDNAME = "iyr");
 /// initialise eyr
 Property eyr As %String(%JSONFIELDNAME = "eyr");
 
+Property hgt As %String(%JSONFIELDNAME = "hgt");
+
+Property hcl As %String(%JSONFIELDNAME = "hcl");
+
+Property ecl As %String(%JSONFIELDNAME = "ecl");
+
+Property pid As %String(%JSONFIELDNAME = "pid");
+
+Property cid As %String(%JSONFIELDNAME = "cid");
+
 ClassMethod Initialise()
 {
     
@@ -63,13 +73,14 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass
 }
 
 /// Set up import method to import the data and save it it an object
-ClassMethod Import(data)
+ClassMethod Import(pass1)
 {
         set obj =..%New()
-        set sts=obj.%JSONImport(data,"")
+        set sts=obj.%JSONImport(pass1,"")
 
         if sts {
         set sts = obj.%Save()
+        
         if sts {
             write "Saved, ID=",obj.%Id(),!
             quit 1
@@ -99,6 +110,21 @@ Storage Default
 </Value>
 <Value name="4">
 <Value>eyr</Value>
+</Value>
+<Value name="5">
+<Value>hgt</Value>
+</Value>
+<Value name="6">
+<Value>hcl</Value>
+</Value>
+<Value name="7">
+<Value>ecl</Value>
+</Value>
+<Value name="8">
+<Value>pid</Value>
+</Value>
+<Value name="9">
+<Value>cid</Value>
 </Value>
 </Data>
 <DataLocation>^New.PassportD</DataLocation>
