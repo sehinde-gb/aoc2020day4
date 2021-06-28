@@ -24,19 +24,19 @@ ClassMethod Initialise()
 {
     
     
-    set pass1 = {"byr:":"1937", "iyr:":"2017", "eyr:":"2020", "hgt:":"183cm", "hcl:":"#FFFFFD","ecl:":"grey", "pid:":"028048884", "cid":"147"}
+    set pass1 = {"byr:":"1937", "iyr:":"2017", "eyr:":"2020", "hgt:":"183cm", "hcl:":"#FFFFFD","ecl:":"grey", "pid:":"028048884","cid":"147"}
 
     set pass2={"iyr:":"2013", "ecl:":"amb", "cid:":"350", "eyr:":"2023", "pid:":"028048884", "hcl:":"#cfa07d", "byr:":"1929"}
 
     set pass3={"ecl:":"grey","pid:":"860033327", "eyr:":"2020","hcl:":"#FFFFFD","byr:":"1937", "iyr:":"2017", "cid:":"147", "hgt:":"183cm"}
 
-    set pass4 = {"hcl:":"#ae17e1", "iyr:":"2013", "eyr:":"2024", "ecl:":"brn", "pid:":"760753108","byr:":"1931", "hgt:":"179cm"}
+    set pass4 = {"hcl:":"#ae17e1", "iyr:":"2013", "eyr:":"2024", "ecl:":"brn", "pid:":"760753108","byr:":"1931", "hgt:":"179cm", "cid":"147"}
 
     /// Run the 4 passport process methods in sequence
 
-    do ..PassportProcess(pass1)
-    do ..PassportProcess(pass2)
-    do ..PassportProcess(pass3)
+    //do ..PassportProcess(pass1)
+    //do ..PassportProcess(pass2)
+    //do ..PassportProcess(pass3)
     do ..PassportProcess(pass4)
 }
 
@@ -46,9 +46,9 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass
 
     /// set the iterators and the mysize variable
 
-    set iterator = pass1.%GetIterator()
+    set iterator = pass4.%GetIterator()
 
-    set mySize = pass1.%Size()
+    set mySize = pass4.%Size()
     
     write "Number of passport fields filled in: ",! 
 
@@ -71,14 +71,14 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject, property = "", pass
         set difference = 8 - mySize
         write "You need to fill in",! write difference,"field/s",!
 
-        do ..Import(pass1)
+        do ..Import(pass4)
 }
 
 /// Set up import method to import the data and save it it an object
-ClassMethod Import(pass1)
+ClassMethod Import(pass4)
 {
         set obj =..%New()
-        set sts=obj.%JSONImport(pass1,"")
+        set sts=obj.%JSONImport(pass4,"")
 
         if sts {
         set sts = obj.%Save()
