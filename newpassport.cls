@@ -72,17 +72,16 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             write "No of completed fields is:",! 
             write mySize, !
             write !
+            /// call the import method to save our newly constructed data.
+            do ..Import(pass3)
         } ELSE {
             write "We are unable to process incomplete passport submissions!",!
 
             set difference = 8 - mySize
 
             write "You need to fill in",! write difference,"field/s",!
+            write "Passport calculation process has ended:",!
     }
-    
-    write "Passport calculation process has ended:",!
-    /// call the import method to save our newly constructed data.
-    do ..Import(pass3)
 }
 
 /// Set up import method to import the data and save it it an object
