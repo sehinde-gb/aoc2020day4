@@ -62,6 +62,7 @@ ClassMethod PIDCheck(pass4 As %DynamicAbstractObject)
 /// Description
 ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
 {
+    write !
     write "Passport calculation process has started:",!
 
     /// set the iterators and the mysize variable
