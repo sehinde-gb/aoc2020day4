@@ -46,7 +46,7 @@ ClassMethod Initialise()
 }
 
 /// Description
-ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAbstractObject)
 {
     write !
     write "Passport calculation process has started:",!
@@ -66,14 +66,16 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
     /// number of fields that you need to fill in to process.
     if (mySize >=7) {
         while iterator.%GetNext(.key, .value) {
-
-             write key_value, !
-            
-            WRITE $SELECT(key_value '= "hgt":"Your passport is invalid and we are unable to submit your passport",key_value '= "cid":"Your passport is valid",1:"The Default")
+              
 
 
-           
-           
+            write key_value, !
+            if (key_value '= "hgt") {
+                write "Your passport is invalid and we are unable to submit your passport",!
+                
+            } ELSEIF (key_value '= "cid") {
+                set pass3.cid = "456"
+            }
                
         }
             write !
@@ -160,5 +162,8 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+}
+
+
 
 }
