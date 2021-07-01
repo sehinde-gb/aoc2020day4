@@ -42,20 +42,20 @@ ClassMethod Initialise()
     //do ..PassportProcess(pass1)
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
-    do ..PassportProcess(pass4)
+    //do ..PassportProcess(pass4)
 }
 
 /// Description
-ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAbstractObject, pass2 As %DynamicAbstractObject, pass1 As %DynamicAbstractObject)
 {
     write !
     write "Passport calculation process has started:",!
 
     /// set the iterators and the mysize variable
 
-    set iterator = pass4.%GetIterator()
+    set iterator = pass1.%GetIterator()
 
-    set mySize = pass4.%Size()
+    set mySize = pass1.%Size()
     
     write "Number of passport fields filled in: ",! 
 
@@ -73,8 +73,7 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAb
             if (key_value '= "hgt") {
                 write "Your passport is invalid and we are unable to submit your passport",!
                 
-            } ELSEIF (key_value '= "cid") {
-                set pass3.cid = "456"
+            
             }
                
         }
@@ -163,6 +162,7 @@ Storage Default
 <Type>%Storage.Persistent</Type>
 }
 }
+
 
 
 
