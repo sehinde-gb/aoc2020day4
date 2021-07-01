@@ -78,7 +78,7 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
             write !
             write "Your passport is valid and we have submitted your passport",!
             /// call the import method to save our newly constructed data.
-            do ..Import(pass4)
+            do ..Import(pass1)
         } else {
             if (key_value '= "hgt") {
                 write "Your passport is invalid and we are unable to submit your passport",!
