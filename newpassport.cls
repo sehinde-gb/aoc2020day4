@@ -33,46 +33,29 @@ ClassMethod Initialise()
 
     //set pass2={"iyr":"2013", "ecl":"amb", "cid":"350", "eyr":"2023", "pid":"028048884", "hcl":"#cfa07d", "byr":"1929"}
 
-    set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm"}
+    //set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm"}
 
-    //set pass4 = {"hcl":"#cfa07d", "iyr":"2011", "eyr":"2025", "ecl":"brn", "pid":"166559648","byr":"1931", "hgt":"59in"}
+    set pass4 = {"hcl":"#cfa07d", "iyr":"2011", "eyr":"2025", "ecl":"brn", "pid":"166559648","byr":"1931", "hgt":"59in"}
 
     /// Run the 4 passport process methods in sequence
 
     //do ..PassportProcess(pass1)
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
-    //do ..PassportProcess(pass3)
-    do ..PassportProcess(pass3)
-}
-
-ClassMethod PIDCheck(pass4 As %DynamicAbstractObject)
-{
-    write "Zero indicates your missing cid:",!
-    write !
-    write $FIND(pass4,"cid")
-    
-
-    
-    
-    set pass3 ={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm", "cid":"34344"}
-    do ..PassportProcess(pass3)
+    do ..PassportProcess(pass4)
 }
 
 /// Description
-ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
 {
     write !
     write "Passport calculation process has started:",!
 
     /// set the iterators and the mysize variable
 
-    
+    set iterator = pass4.%GetIterator()
 
-
-    set iterator = pass3.%GetIterator()
-
-    set mySize = pass3.%Size()
+    set mySize = pass4.%Size()
     
     write "Number of passport fields filled in: ",! 
 
@@ -88,9 +71,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             if (key_value '= "cid") {
                 set pass3.cid = "456"
                 
-            } else {
-
-            }
+            } 
                
         }
             write !
@@ -99,7 +80,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             write !
             write "Your passport is valid and we have submitted your passport",!
             /// call the import method to save our newly constructed data.
-            do ..Import(pass3)
+            do ..Import(pass4)
         } else {
             write "Your passport is invalid and we are unable to submit your passport",!
 
@@ -111,12 +92,12 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
 }
 
 /// Set up import method to import the data and save it it an object
-ClassMethod Import(pass3)
+ClassMethod Import(pass4)
 {
         write "We are saving the object now:",!
         /// create new object and set it to import as a json object 
         set obj =..%New()
-        set sts=obj.%JSONImport(pass3,"")
+        set sts=obj.%JSONImport(pass4,"")
 
         /// save the object
         if sts {
