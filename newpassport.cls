@@ -68,9 +68,7 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
         while iterator.%GetNext(.key, .value) {
               
             write key_value, !
-            if (key_value '= "hgt") {
-                write "Your passport is invalid and we are unable to submit your passport",!
-            }
+            
             
                
         }
@@ -82,6 +80,9 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
             /// call the import method to save our newly constructed data.
             do ..Import(pass4)
         } else {
+            if (key_value '= "hgt") {
+                write "Your passport is invalid and we are unable to submit your passport",!
+            }
             write "Your passport is invalid and we are unable to submit your passport",!
 
             set difference = 8 - mySize
