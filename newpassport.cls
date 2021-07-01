@@ -51,6 +51,9 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
 
     /// set the iterators and the mysize variable
 
+    write $FIND(pass3,"cid")
+
+
     set iterator = pass3.%GetIterator()
 
     set mySize = pass3.%Size()
@@ -75,7 +78,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             /// call the import method to save our newly constructed data.
             do ..Import(pass3)
         } ELSE {
-            write "We are unable to process incomplete passport submissions!",!
+            write "Your passport is invalid and we are unable to submit your passport",!
 
             set difference = 8 - mySize
 
