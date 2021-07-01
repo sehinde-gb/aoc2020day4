@@ -71,7 +71,15 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
             if (key_value '= "cid") {
                 set pass3.cid = "456"
                 
-            } 
+            } else {
+            
+            write "Your passport is invalid and we are unable to submit your passport",!
+
+            set difference = 8 - mySize
+
+            write "You need to fill in",! write difference,"field/s",!
+            write "Passport calculation process has ended:",!
+            }
                
         }
             write !
