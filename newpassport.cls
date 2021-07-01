@@ -66,20 +66,12 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
     /// number of fields that you need to fill in to process.
     if (mySize >=7) {
         while iterator.%GetNext(.key, .value) {
-        
-            write key_value, !
-            if (key_value '= "cid") {
-                set pass3.cid = "456"
-                
-            } else {
             
-            write "Your passport is invalid and we are unable to submit your passport",!
+            WRITE $SELECT(key_value '= "hgt":"Your passport is invalid and we are unable to submit your passport",key_value '= "cid":"Your passport is valid",1:"The Default")
 
-            set difference = 8 - mySize
 
-            write "You need to fill in",! write difference,"field/s",!
-            write "Passport calculation process has ended:",!
-            }
+            write key_value, !
+           
                
         }
             write !
