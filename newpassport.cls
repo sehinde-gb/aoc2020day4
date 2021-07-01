@@ -46,7 +46,7 @@ ClassMethod Initialise()
 }
 
 /// Description
-ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAbstractObject, pass2 As %DynamicAbstractObject, pass1 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
 {
     write !
     write "Passport calculation process has started:",!
@@ -67,8 +67,6 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAb
     if (mySize >=7) {
         while iterator.%GetNext(.key, .value) {
               
-
-
             write key_value, !
             if (key_value '= "hgt") {
                 write "Your passport is invalid and we are unable to submit your passport",!
