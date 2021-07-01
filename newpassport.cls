@@ -72,9 +72,8 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAb
             write key_value, !
             if (key_value '= "hgt") {
                 write "Your passport is invalid and we are unable to submit your passport",!
-                
-            
             }
+        }
                
         }
             write !
@@ -84,7 +83,8 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject, pass3 As %DynamicAb
             write "Your passport is valid and we have submitted your passport",!
             /// call the import method to save our newly constructed data.
             do ..Import(pass4)
-        } else {
+}
+else {
             write "Your passport is invalid and we are unable to submit your passport",!
 
             set difference = 8 - mySize
@@ -162,6 +162,8 @@ Storage Default
 <Type>%Storage.Persistent</Type>
 }
 }
+
+
 
 
 
