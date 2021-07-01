@@ -48,9 +48,9 @@ ClassMethod Initialise()
 
 ClassMethod PIDCheck(pass3 As %DynamicAbstractObject)
 {
-
+    write "Zero indicates your missing cid:",!
     write $FIND(pass3,"cid")
-    write "Unable to find your missing cid:",!
+    
     set pass3 ={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm", "cid":"34344"}
     do ..PassportProcess(pass3)
 }
