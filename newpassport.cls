@@ -81,7 +81,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
     /// This method is used to determine if you have any missing fields and if you do have them a message appears
     /// on the screen stating that you have an incomplete passport submission and it tells you the
     /// number of fields that you need to fill in to process.
-    if (mySize >=8) {
+    if (mySize >=7) {
         while iterator.%GetNext(.key, .value) {
         
             write key_value, !
