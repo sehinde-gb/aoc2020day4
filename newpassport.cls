@@ -42,16 +42,23 @@ ClassMethod Initialise()
     //do ..PassportProcess(pass1)
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
-    do ..PassportProcess(pass3)
+    //do ..PassportProcess(pass3)
+    do ..PIDCheck(pass3)
 }
 
+ClassMethod PIDCheck(pass3 As %DynamicAbstractObject)
+{
+    write $FIND(pass3,"cid")
+}
+
+/// Description
 ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
 {
     write "Passport calculation process has started:",!
 
     /// set the iterators and the mysize variable
 
-    write $FIND(pass3,"cid")
+    
 
 
     set iterator = pass3.%GetIterator()
@@ -71,13 +78,13 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             write key_value, !
                
         }
-            write !
+write !
             write "No of completed fields is:",! 
             write mySize, !
             write !
             /// call the import method to save our newly constructed data.
             do ..Import(pass3)
-        } ELSE {
+        }ELSE {
             write "Your passport is invalid and we are unable to submit your passport",!
 
             set difference = 8 - mySize
