@@ -33,7 +33,7 @@ ClassMethod Initialise()
 
     //set pass2={"iyr":"2013", "ecl":"amb", "cid":"350", "eyr":"2023", "pid":"028048884", "hcl":"#cfa07d", "byr":"1929"}
 
-    set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm"}
+    set invalid={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm"}
 
     //set pass4 = {"hcl":"#cfa07d", "iyr":"2011", "eyr":"2025", "ecl":"brn", "pid":"166559648","byr":"1931", "hgt":"59in"}
 
@@ -43,12 +43,14 @@ ClassMethod Initialise()
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
     //do ..PassportProcess(pass3)
-    do ..PIDCheck(pass3)
+    do ..PIDCheck(invalid)
 }
 
 ClassMethod PIDCheck(pass3 As %DynamicAbstractObject)
 {
     write $FIND(pass3,"cid")
+    set pass3 ={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm", "cid":"34344"}
+    do ..PassportProcess(pass3)
 }
 
 /// Description
@@ -78,10 +80,11 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             write key_value, !
                
         }
-write !
+            write !
             write "No of completed fields is:",! 
             write mySize, !
             write !
+            write "Your passport is valid and we have submitted your passport",!
             /// call the import method to save our newly constructed data.
             do ..Import(pass3)
         }ELSE {
