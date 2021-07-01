@@ -29,17 +29,17 @@ ClassMethod Initialise()
 {
     
     
-    //set pass1 = {"byr":"1937", "iyr":"2017", "eyr":"2020", "hgt":"183cm", "hcl":"#FFFFFD","ecl":"grey", "pid":"028048884","cid":"147"}
+    set pass1 = {"byr":"1937", "iyr":"2017", "eyr":"2020", "hgt":"183cm", "hcl":"#FFFFFD","ecl":"grey", "pid":"028048884","cid":"147"}
 
     //set pass2={"iyr":"2013", "ecl":"amb", "cid":"350", "eyr":"2023", "pid":"028048884", "hcl":"#cfa07d", "byr":"1929"}
 
     //set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm"}
 
-    set pass4 = {"hcl":"#cfa07d", "iyr":"2011", "eyr":"2025", "ecl":"brn", "pid":"166559648","byr":"1931", "hgt":"59in"}
+    //set pass4 = {"hcl":"#cfa07d", "iyr":"2011", "eyr":"2025", "ecl":"brn", "pid":"166559648","byr":"1931", "hgt":"59in"}
 
     /// Run the 4 passport process methods in sequence
 
-    //do ..PassportProcess(pass1)
+    do ..PassportProcess(pass1)
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
     //do ..PassportProcess(pass4)
@@ -162,6 +162,9 @@ Storage Default
 <Type>%Storage.Persistent</Type>
 }
 }
+
+
+
 
 
 
