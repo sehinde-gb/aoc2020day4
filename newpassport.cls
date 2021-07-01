@@ -86,7 +86,8 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
         
             write key_value, !
             if (key_value '= "cid") {
-              do iterator.%Push("cid").%Push("456")  
+                set pass3.cid = "456"
+                
             } else {
 
             }
