@@ -54,19 +54,19 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             // get length of line
             set lline = $LENGTH(line)
             write !, line
-            For i=1:1:lline {
-                set row.WholeLine = line
-                write row.WholeLine ,!
+            //For i=1:1:lline {
+              //  set row.WholeLine = line
+                //write row.WholeLine ,!
                 //set readvalue = $EXTRACT(line,i,i)
                 //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
-            }
+            //}
         set status = row.%Save()
         }
 
     
     Write !, "Import Complete"
-    }
-    write row ,!
+}
+write row ,!
 }
 
 Storage Default
