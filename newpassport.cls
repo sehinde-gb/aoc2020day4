@@ -56,8 +56,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write !, line
             For i=1:1:lline {
                 set row.WholeLine = line
-                set readvalue = $EXTRACT(line,i,i)
-                write !, "Current readvalue is: "_readvalue_" i is currently: "_i
+                write row.WholeLine ,!
+                //set readvalue = $EXTRACT(line,i,i)
+                //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
             }
         set status = row.%Save()
         }
@@ -65,6 +66,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     
     Write !, "Import Complete"
     }
+    write row ,!
 }
 
 Storage Default
