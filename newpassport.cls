@@ -69,13 +69,15 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             
             write key, !
             if (key '= "cid") {
-                write "Your passport is valid and we are able to submit your passport",!
+                quit
+                
             } elseif (key '="byr") {
                 write "Your passport is invalid and we are unable to submit your passport",!
             } else{
                 write "Your passport is valid and we are able to submit your passport",!
             }
         }
+        write "Your passport is valid and we are able to submit your passport",!
 
 
     }
