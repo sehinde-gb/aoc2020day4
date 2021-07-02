@@ -1,6 +1,9 @@
 Class New.Passport Extends (%Persistent, %JSON.Adaptor)
 {
 
+/// Description
+Property WholeLine As %String;
+
 /// initialise byr
 Property byr As %String(%JSONFIELDNAME = "byr");
 
@@ -94,6 +97,9 @@ Storage Default
 </Value>
 <Value name="9">
 <Value>cid</Value>
+</Value>
+<Value name="10">
+<Value>WholeLine</Value>
 </Value>
 </Data>
 <DataLocation>^New.PassportD</DataLocation>
