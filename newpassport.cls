@@ -78,15 +78,15 @@ ClassMethod PassportProcess(pass2 As %DynamicAbstractObject)
             //do ..Import(pass1)
 
         } else {
-            while iterator.%GetNext(.key, .value) {
+            write "Your passport is invalid and we are unable to submit your passport",!
+            //while iterator.%GetNext(.key, .value) {
               
-            write key_value, !
+            //write key_value, !
 
 
             
             
     }
-
 }
 }
 
@@ -128,5 +128,9 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+
+
+
+
 
 }
