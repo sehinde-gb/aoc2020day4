@@ -29,9 +29,9 @@ ClassMethod Initialise()
 {
     
     
-    set pass1 = {"byr":"1937", "iyr":"2017", "eyr":"2020", "hgt":"183cm", "hcl":"#FFFFFD","ecl":"grey", "pid":"028048884","cid":"147"}
+    //set pass1 = {"byr":"1937", "iyr":"2017", "eyr":"2020", "hgt":"183cm", "hcl":"#FFFFFD","ecl":"grey", "pid":"028048884","cid":"147"}
 
-    //set pass2={"iyr":"2013", "ecl":"amb", "cid":"350", "eyr":"2023", "pid":"028048884", "hcl":"#cfa07d", "byr":"1929"}
+    set pass2={"iyr":"2013", "ecl":"amb", "cid":"350", "eyr":"2023", "pid":"028048884", "hcl":"#cfa07d", "byr":"1929"}
 
     //set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm"}
 
@@ -39,22 +39,22 @@ ClassMethod Initialise()
 
     /// Run the 4 passport process methods in sequence
 
-    do ..PassportProcess(pass1)
+    do ..PassportProcess(pass2)
     //do ..PassportProcess(pass2)
     //do ..PassportProcess(pass3)
     //do ..PassportProcess(pass4)
 }
 
-ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
+ClassMethod PassportProcess(pass2 As %DynamicAbstractObject)
 {
     write !
     write "Passport calculation process has started:",!
 
     /// set the iterators and the mysize variable
 
-    set iterator = pass1.%GetIterator()
+    set iterator = pass2.%GetIterator()
 
-    set mySize = pass1.%Size()
+    set mySize = pass2.%Size()
     
     write "Number of passport fields filled in: ",! 
 
