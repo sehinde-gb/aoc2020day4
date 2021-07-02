@@ -64,13 +64,11 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
     /// This method is used to determine if you have any missing fields and if you do have them a message appears
     /// on the screen stating that you have an incomplete passport submission and it tells you the
     /// number of fields that you need to fill in to process.
-    if (mySize >=7) {
+    if (mySize=8) {
         while iterator.%GetNext(.key, .value) {
               
             write key_value, !
-            
-            
-               
+                 
         }
             write !
             write "No of completed fields is:",! 
@@ -79,10 +77,21 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
             write "Your passport is valid and we have submitted your passport",!
             /// call the import method to save our newly constructed data.
             do ..Import(pass1)
+
         } else {
+            while iterator.%GetNext(.key, .value) {
+              
+            write key_value, !
+
             if (key_value '= "hgt") {
                 write "Your passport is invalid and we are unable to submit your passport",!
             }
+
+            }
+
+            
+
+            
             write "Your passport is invalid and we are unable to submit your passport",!
 
             set difference = 8 - mySize
@@ -95,7 +104,7 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
 /// Set up import method to import the data and save it it an object
 ClassMethod Import(pass4)
 {
-        write "We are saving the object now:",!
+        write "We are saving your object now:",!
         /// create new object and set it to import as a json object 
         set obj =..%New()
         set sts=obj.%JSONImport(pass4,"")
@@ -159,5 +168,19 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
