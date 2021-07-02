@@ -67,10 +67,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
         while iterator.%GetNext(.key, .value) {
               
             write key_value, !
-            if (key '= "cid") {
-
-                write "hello",!
-            }     
+          
         }
             write !
             write "No of completed fields is:",! 
@@ -81,6 +78,13 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             //do ..Import(pass1)
 
         } else {
+
+            if (key '= "cid") {
+
+                write "hello",!
+            } else {
+
+            }   
             write "Passport processing has ended",!
             write "Your passport is invalid and we are unable to submit your passport",!
             
