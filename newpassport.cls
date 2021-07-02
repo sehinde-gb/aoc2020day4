@@ -67,7 +67,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
         while iterator.%GetNext(.key, .value) {
               
             write key_value, !
-           if (key_value '= "hgt") {
+           if (key '= "cid") {
                 write "Your passport is valid and we are able to submit your passport",!
             }
 
