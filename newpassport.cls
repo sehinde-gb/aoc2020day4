@@ -45,7 +45,6 @@ ClassMethod Initialise()
     //do ..PassportProcess(pass4)
 }
 
-/// Description
 ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
 {
     write !
@@ -83,104 +82,14 @@ ClassMethod PassportProcess(pass1 As %DynamicAbstractObject)
               
             write key_value, !
 
-            if (key_value '= "hgt") {
-                write "Your passport is invalid and we are unable to submit your passport",!
-            }
-
-            }
-
+            
             
 
             
-            write "Your passport is invalid and we are unable to submit your passport",!
-
-            set difference = 8 - mySize
-
-            write "You need to fill in",! write difference,"field/s",!
-            write "Passport calculation process has ended:",!
+            
     }
-}
 
-/// Set up import method to import the data and save it it an object
-ClassMethod Import(pass4)
-{
-        write "We are saving your object now:",!
-        /// create new object and set it to import as a json object 
-        set obj =..%New()
-        set sts=obj.%JSONImport(pass4,"")
-
-        /// save the object
-        if sts {
-        set sts = obj.%Save()
-        
-        /// inform everyone that we have saved the object
-        if sts {
-            write "Saved, ID=",obj.%Id(),!
-            quit 1
-            
-        } else {
-
-            write "Not saved, Err=",$system.Status.GetOneErrorText(sts),!
-            quit 0
-        }
-        
-        } else {
-            write "Can't import: ",$system.Status.GetOneErrorText(sts),!
-            quit 0
-        }
-}
-
-Storage Default
-{
-<Data name="PassportDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>byr</Value>
-</Value>
-<Value name="3">
-<Value>iyr</Value>
-</Value>
-<Value name="4">
-<Value>eyr</Value>
-</Value>
-<Value name="5">
-<Value>hgt</Value>
-</Value>
-<Value name="6">
-<Value>hcl</Value>
-</Value>
-<Value name="7">
-<Value>ecl</Value>
-</Value>
-<Value name="8">
-<Value>pid</Value>
-</Value>
-<Value name="9">
-<Value>cid</Value>
-</Value>
-</Data>
-<DataLocation>^New.PassportD</DataLocation>
-<DefaultData>PassportDefaultData</DefaultData>
-<IdLocation>^New.PassportD</IdLocation>
-<IndexLocation>^New.PassportI</IndexLocation>
-<StreamLocation>^New.PassportS</StreamLocation>
-<Type>%Storage.Persistent</Type>
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
