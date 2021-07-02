@@ -67,7 +67,7 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
     if (mySize<=7) {
         while iterator.%GetNext(.key, .value) {
             
-             write key_value, !
+             write "element:"_key_"=/"_value_"/  "
             if (key '= "cid") {
                
                 
