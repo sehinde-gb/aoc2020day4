@@ -67,6 +67,12 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
         while iterator.%GetNext(.key, .value) {
               
             write key_value, !
+           if (key_value '= "hgt") {
+                write "Your passport is valid and we are able to submit your passport",!
+            }
+
+            } 
+
           
         }
             write !
@@ -76,27 +82,6 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
             write "Your passport is valid and we have submitted your passport",!
             /// call the import method to save our newly constructed data.
             //do ..Import(pass1)
-
-        } else {
-            while iterator.%GetNext(.key, .value) {
-               if (key '= "cid") {
-                   set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm", "cid":"234"}
-                    write key_value, !
-                } else {
-
-                }   
-            //write key_value, !
-          
-        }
-           
-            write "Passport processing has ended",!
-            write "Your passport is invalid and we are unable to submit your passport",!
-            
-
-
-            
-            
-    }
 }
 
 Storage Default
