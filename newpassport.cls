@@ -68,11 +68,11 @@ ClassMethod PassportProcess(pass4 As %DynamicAbstractObject)
         while iterator.%GetNext(.key, .value) {
             
              write "element:"_key_"=/"_value_"/  "
-            if (key '= "cid") {
+            if (_key '= "cid") {
                
                 
                 
-            } elseif (key '="byr") {
+            } elseif (_key '="byr") {
                 write "Your passport is invalid and we are unable to submit your passport",!
 
             } else{
