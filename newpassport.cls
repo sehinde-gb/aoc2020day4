@@ -80,7 +80,7 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
         } else {
             while iterator.%GetNext(.key, .value) {
                if (key '= "cid") {
-                   set pass3.cid="323" 
+                   set pass3={"ecl":"brn","pid":"760753108", "eyr":"2024","hcl":"#ae17e1","byr":"1931", "iyr":"2013","hgt":"179cm", "cid":"234"}
                     write key_value, !
                 } else {
 
