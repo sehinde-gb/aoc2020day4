@@ -47,7 +47,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
         IF (nline >= 1) & (line '= "") {
-            write !, "nline loop started"
+            //write !, "nline loop started"
             //read line of text from file
            
             set row = ##class(New.Passport).%New() 
@@ -64,7 +64,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         }
 
     
-    Write !, "Import Complete"
+    //Write !, "Import Complete"
 }
     write row ,!
 }
