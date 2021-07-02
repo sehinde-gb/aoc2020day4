@@ -63,25 +63,22 @@ ClassMethod PassportProcess(pass3 As %DynamicAbstractObject)
     /// This method is used to determine if you have any missing fields and if you do have them a message appears
     /// on the screen stating that you have an incomplete passport submission and it tells you the
     /// number of fields that you need to fill in to process.
-    if (mySize=8) {
+
+    if (mySize<=7) {
         while iterator.%GetNext(.key, .value) {
-              
-            write key_value, !
-           if (key '= "cid") {
+            
+            write key, !
+            if (key '= "cid") {
+                write "Your passport is valid and we are able to submit your passport",!
+            } elseif (key '="byr") {
+                write "Your passport is invalid and we are unable to submit your passport",!
+            } else{
                 write "Your passport is valid and we are able to submit your passport",!
             }
-
-            } 
-
-          
         }
-            write !
-            write "No of completed fields is:",! 
-            write mySize, !
-            write !
-            write "Your passport is valid and we have submitted your passport",!
-            /// call the import method to save our newly constructed data.
-            //do ..Import(pass1)
+
+
+    }
 }
 
 Storage Default
