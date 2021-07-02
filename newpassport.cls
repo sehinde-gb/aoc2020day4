@@ -88,7 +88,6 @@ ClassMethod PassportProcess(pass2 As %DynamicAbstractObject)
             
     }
 }
-}
 
 Storage Default
 {
@@ -128,9 +127,5 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
-
-
-
-
 
 }
