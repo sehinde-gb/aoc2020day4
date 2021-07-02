@@ -41,7 +41,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
     WHILE ('file.AtEnd) {
-    
         //read line of text from file
         set line = file.ReadLine()
         // create nline and go through each line of text from file whilst incrementing the counter
@@ -50,7 +49,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         IF (nline >= 1) & (line '= "") {
             write !, "nline loop started"
             //read line of text from file
-            //set line = file.ReadLine()
+           
             set row = ##class(New.Passport).%New() 
             // get length of line
             set lline = $LENGTH(line)
@@ -60,7 +59,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 set readvalue = $EXTRACT(line,i,i)
                 write !, "Current readvalue is: "_readvalue_" i is currently: "_i
             }
-        //set status = row.%Save()
+        set status = row.%Save()
         }
 
     
