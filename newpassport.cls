@@ -25,7 +25,7 @@ Property pid As %String(%JSONFIELDNAME = "pid");
 /// initialise cid
 Property cid As %String(%JSONFIELDNAME = "cid");
 
-ClassMethod Import(dir As %String = "//day4.txt")
+ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
     // Open my text file and check it exists
     IF ##class(%File).Exists(dir) '=1 {
