@@ -104,49 +104,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
     
     //Write !, "Import Complete"
-}
-}
 
-Storage Default
-{
-<Data name="PassportDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>byr</Value>
-</Value>
-<Value name="3">
-<Value>iyr</Value>
-</Value>
-<Value name="4">
-<Value>eyr</Value>
-</Value>
-<Value name="5">
-<Value>hgt</Value>
-</Value>
-<Value name="6">
-<Value>hcl</Value>
-</Value>
-<Value name="7">
-<Value>ecl</Value>
-</Value>
-<Value name="8">
-<Value>pid</Value>
-</Value>
-<Value name="9">
-<Value>cid</Value>
-</Value>
-<Value name="10">
-<Value>WholeLine</Value>
-</Value>
-</Data>
-<DataLocation>^New.PassportD</DataLocation>
-<DefaultData>PassportDefaultData</DefaultData>
-<IdLocation>^New.PassportD</IdLocation>
-<IndexLocation>^New.PassportI</IndexLocation>
-<StreamLocation>^New.PassportS</StreamLocation>
-<Type>%Storage.Persistent</Type>
+}
 }
 
 }
