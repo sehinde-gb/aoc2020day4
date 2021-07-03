@@ -72,8 +72,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write !, line
                 
             } else {
-                write !, line
                 write !, lline
+                write !, line
+                
                 //write nline ,!
                 // For i=1:1:lline {
                   //  set row.WholeLine = line
