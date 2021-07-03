@@ -57,7 +57,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
             
             if (nline = 4) {
-                //WRITE *12
                 write *12
                 write !, line
             } elseif (nline = 7) {
@@ -68,9 +67,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write !, line
             } else {
                 write !, line
-                write !, ""
-                set $EXTRACT(line,1,7)=""
-                write !, line
+                //write !, "Extraction"
+                //set $EXTRACT(line,1,7)=""
+                //write !, line
             }
             
 
