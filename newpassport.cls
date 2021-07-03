@@ -55,7 +55,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             // get length of line
             set lline = $LENGTH(line)
 
-            For i=1:1:1 {
+            For i=1:1:lline {
                     set row.WholeLine = line
                     set readvalue = $EXTRACT(line,i,i)
                     write !, "Current readvale is: "_readvalue_" i is currently: "_i
