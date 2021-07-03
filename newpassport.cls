@@ -60,7 +60,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 WRITE *12
                 write !, line
             } else {
-                
+                write !, line
             }
             
 
