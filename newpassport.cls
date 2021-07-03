@@ -34,7 +34,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     IF ##class(%File).Exists(dir) '=1 {
     write !, "Unable to Open: "_dir
     QUIT}
-    ELSE { write "File: "_dir_" is open"}
+    ELSE { write "File: "_dir_" is open"
+    write *12
+    }
 
     // instantiate a new class called file
     set file = ##class(%Stream.FileCharacter).%New()
