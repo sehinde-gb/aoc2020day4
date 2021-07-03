@@ -67,7 +67,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 }
             write lline ,!
             write row.WholeLine ,!
-            write $extract(line,1,7)
+            set test = $extract(line,1,7)
+            write test ,!
+            
             
             //if (nline = 4) {
                 
