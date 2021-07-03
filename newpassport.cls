@@ -27,6 +27,7 @@ Property pid As %String(%JSONFIELDNAME = "pid");
 
 /// initialise cid
 Property cid As %String(%JSONFIELDNAME = "cid");
+
 ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
     // Open my text file and check it exists
@@ -77,5 +78,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                write !, "Current readvale is: "_readvalue_" i is currently: "_i
             }
         } 
+    }
+}
 
 }
