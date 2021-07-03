@@ -48,7 +48,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         // create nline and go through each line of text from file whilst incrementing the counter
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
-        IF (nline >= 1) & (nline <=3) & (nline <=6) & (nline <=11) & (line '= "") {
+        IF (nline >= 1) & (line '= "") {
                 
             //read line of text from file
            
