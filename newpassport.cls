@@ -57,7 +57,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write *12
             write lline ,!
 
-            For i=1:42:lline {
+            //For i=1:42:lline {
                     
                     write $extract(line,i,i+41),!
                     set row.WholeLine = line
@@ -69,7 +69,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write row.WholeLine ,!
             set test = $extract(line,1,7)
             write test ,!
-            
+
             
             //if (nline = 4) {
                 
@@ -154,5 +154,6 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+
 
 }
