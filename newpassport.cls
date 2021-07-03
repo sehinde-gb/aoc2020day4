@@ -70,6 +70,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 
             } else {
                 write !, line
+                write nline ,!
                 // For i=1:1:lline {
                   //  set row.WholeLine = line
                     //set readvalue = $EXTRACT(line,i,i)
@@ -78,7 +79,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                    // }
                 
                 //write row.WholeLine ,!
-                //write nline ,!
+               
                 //set status = row.%Save()
                 //write status ,!
                 //write !, nline
