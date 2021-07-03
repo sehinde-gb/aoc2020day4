@@ -55,7 +55,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             // get length of line
             set lline = $LENGTH(line)
             write !, line   
-            WRITE *27
+            WRITE *12
            
         //set status = row.%Save()
         }
