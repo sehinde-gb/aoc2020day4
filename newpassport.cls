@@ -108,8 +108,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
     //Write !, "Import Complete"
 }
-            write lline ,!
-            write row.WholeLine ,!
+            //write lline ,!
+            //write row.WholeLine ,!
             set test = $extract(line,1,7)
             write !, "test"
             write test ,!
