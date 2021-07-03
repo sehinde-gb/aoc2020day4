@@ -76,7 +76,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                     write !, "Current readvale is: "_readvalue_" i is currently: "_i
                     }
                 write row.WholeLine ,!
-
+                set status = row.%Save()
                 //write !, nline
                 //write !, "post Extraction"
                 //set $EXTRACT(line,1,7)=""
@@ -87,7 +87,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
 
            
-        //set status = row.%Save()
+        
         }
 
     
