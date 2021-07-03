@@ -50,13 +50,14 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             //write !, "nline loop started"
             //read line of text from file
            
-            set row = ##class(New.Passport).%New() 
+            set row = ##class(New.Passport).%New()
+             if (nline=2) {
+                SET formfeed=$CHAR(10)
+            } 
             // get length of line
             set lline = $LENGTH(line)
             write !, line
-            if (nline=2) {
-                SET formfeed=$CHAR(10)
-            }
+           
         //set status = row.%Save()
         }
 
