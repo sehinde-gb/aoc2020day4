@@ -54,19 +54,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
             // get length of line
             set lline = $LENGTH(line)
-            //write *12
-            //write lline ,!
-            //set test = $extract(line,1,26)
-            
-
-            
-                    
-              //      write $extract(line,i,i+41),!
-              //      
-                    
-                //}
-            
-
             
             if (nline = 4) {
                 write *12
@@ -92,6 +79,48 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             }
         }    
     }
+}
+
+Storage Default
+{
+<Data name="PassportDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>WholeLine</Value>
+</Value>
+<Value name="3">
+<Value>byr</Value>
+</Value>
+<Value name="4">
+<Value>iyr</Value>
+</Value>
+<Value name="5">
+<Value>eyr</Value>
+</Value>
+<Value name="6">
+<Value>hgt</Value>
+</Value>
+<Value name="7">
+<Value>hcl</Value>
+</Value>
+<Value name="8">
+<Value>ecl</Value>
+</Value>
+<Value name="9">
+<Value>pid</Value>
+</Value>
+<Value name="10">
+<Value>cid</Value>
+</Value>
+</Data>
+<DataLocation>^New.PassportD</DataLocation>
+<DefaultData>PassportDefaultData</DefaultData>
+<IdLocation>^New.PassportD</IdLocation>
+<IndexLocation>^New.PassportI</IndexLocation>
+<StreamLocation>^New.PassportS</StreamLocation>
+<Type>%Storage.Persistent</Type>
 }
 
 }
