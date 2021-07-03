@@ -56,6 +56,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             set lline = $LENGTH(line)
             //write *12
             //write lline ,!
+            set test = $extract(line,1,26)
+            //set test1 = $EXTRACT(line,10,17) 
+            write !, "test"
+            write test ,!
 
             //For i=1:42:lline {
                     
@@ -110,10 +114,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 }
             //write lline ,!
             //write row.WholeLine ,!
-            set test = $extract(line,1,26)
-            //set test1 = $EXTRACT(line,10,17) 
-            write !, "test"
-            write test ,!
+           
             //write !, "test1"
             //write test1 ,!
 }
