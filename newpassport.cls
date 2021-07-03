@@ -57,8 +57,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write *12
             write lline ,!
 
-            For i=1:14:lline {
-                    write $extract(line,i,i+13),!
+            For i=1:34:lline {
+                    write $extract(line,i,i+33),!
                     //set row.WholeLine = line
                     //set readvalue = $EXTRACT(lline,i,i+3)
                     //write !, "Current readvale is: "_readvalue_" i is currently: "_i
