@@ -27,7 +27,6 @@ Property pid As %String(%JSONFIELDNAME = "pid");
 
 /// initialise cid
 Property cid As %String(%JSONFIELDNAME = "cid");
-
 ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
     // Open my text file and check it exists
@@ -78,49 +77,5 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                write !, "Current readvale is: "_readvalue_" i is currently: "_i
             }
         } 
-}
-}
-
-Storage Default
-{
-<Data name="PassportDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>WholeLine</Value>
-</Value>
-<Value name="3">
-<Value>byr</Value>
-</Value>
-<Value name="4">
-<Value>iyr</Value>
-</Value>
-<Value name="5">
-<Value>eyr</Value>
-</Value>
-<Value name="6">
-<Value>hgt</Value>
-</Value>
-<Value name="7">
-<Value>hcl</Value>
-</Value>
-<Value name="8">
-<Value>ecl</Value>
-</Value>
-<Value name="9">
-<Value>pid</Value>
-</Value>
-<Value name="10">
-<Value>cid</Value>
-</Value>
-</Data>
-<DataLocation>^New.PassportD</DataLocation>
-<DefaultData>PassportDefaultData</DefaultData>
-<IdLocation>^New.PassportD</IdLocation>
-<IndexLocation>^New.PassportI</IndexLocation>
-<StreamLocation>^New.PassportS</StreamLocation>
-<Type>%Storage.Persistent</Type>
-}
 
 }
