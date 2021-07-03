@@ -51,7 +51,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 
                set row.WholeLine = line
                set readvalue = $EXTRACT(line,1,42)
-               write !, "Current readvale is: "_readvalue_" i is currently: "_i
+               write readvalue ,!
+               //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
             }
         } 
     }
