@@ -77,6 +77,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                     
                     }
                 write row.WholeLine ,!
+                write nline ,!
                 //set status = row.%Save()
                 //write status ,!
                 //write !, nline
