@@ -72,7 +72,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write !, line
                 
             } else {
-                write !, lline
+                //write !, lline
                 write !, line
                 
                 //write nline ,!
