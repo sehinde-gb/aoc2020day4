@@ -66,6 +66,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                     
                 }
             write lline ,!
+            write row.WholeLine ,!
             
             //if (nline = 4) {
                 
