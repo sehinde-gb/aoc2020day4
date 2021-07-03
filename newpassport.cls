@@ -62,28 +62,22 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             set readvalue = $EXTRACT(line,1,42)
             write readvalue ,!
             
-            //if (nline = 4) {
-              //  write *12
-              //  write !, line
-            //} elseif (nline = 7) {
-              //  WRITE *12
-               // write !, line    
-            //} elseif (nline = 12) {
-            //    WRITE *12
-              //  write !, line  
-            //} else {
+            if (nline = 4) {
+                write *12
+                write !, line
+            } elseif (nline = 7) {
+                WRITE *12
+                write !, line    
+            } elseif (nline = 12) {
+                WRITE *12
+                write !, line  
+            } else {
                 
-              // set row.WholeLine = line
-              // set readvalue = $EXTRACT(line,1,42)
-               //write !, "Current readvale is: "_readvalue_" i is currently: "_i
-              
-                
-                
-            //}
-        } elseif (nline=4) &(nline=7) & (nline=12) {
-            WRITE *12
-            write !, line 
-        }
+               set row.WholeLine = line
+               set readvalue = $EXTRACT(line,1,42)
+               write !, "Current readvale is: "_readvalue_" i is currently: "_i
+            }
+        } 
 }
 }
 
@@ -128,5 +122,49 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+}
+
+Storage Default
+{
+<Data name="PassportDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>WholeLine</Value>
+</Value>
+<Value name="3">
+<Value>byr</Value>
+</Value>
+<Value name="4">
+<Value>iyr</Value>
+</Value>
+<Value name="5">
+<Value>eyr</Value>
+</Value>
+<Value name="6">
+<Value>hgt</Value>
+</Value>
+<Value name="7">
+<Value>hcl</Value>
+</Value>
+<Value name="8">
+<Value>ecl</Value>
+</Value>
+<Value name="9">
+<Value>pid</Value>
+</Value>
+<Value name="10">
+<Value>cid</Value>
+</Value>
+</Data>
+<DataLocation>^New.PassportD</DataLocation>
+<DefaultData>PassportDefaultData</DefaultData>
+<IdLocation>^New.PassportD</IdLocation>
+<IndexLocation>^New.PassportI</IndexLocation>
+<StreamLocation>^New.PassportS</StreamLocation>
+<Type>%Storage.Persistent</Type>
+}
+
 
 }
