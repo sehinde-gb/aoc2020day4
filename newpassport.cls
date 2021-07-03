@@ -46,7 +46,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         // create nline and go through each line of text from file whilst incrementing the counter
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
-        IF (nline >= 1) & (line '= "") {
+        IF (nline >= 1) & (nline <=3) & (nline <=6) & (nline <=11) & (line '= "") {
                 
             //read line of text from file
            
@@ -54,31 +54,34 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
             // get length of line
             set lline = $LENGTH(line)
+
+            set row.WholeLine = line
+            set readvalue = $EXTRACT(line,1,42)
+            write readvalue ,!
             
-            if (nline = 4) {
-                write *12
-                write !, line
-            } elseif (nline = 7) {
-                WRITE *12
-                write !, line    
-            } elseif (nline = 12) {
-                WRITE *12
-                write !, line  
-            } else {
-                //set test = $EXTRACT(line,1,42) 
-            //write !, "test"
-            //write test ,!
-               //write row.WholeLine ,!
-               
-               set row.WholeLine = line
-               set readvalue = $EXTRACT(line,1,42)
+            //if (nline = 4) {
+              //  write *12
+              //  write !, line
+            //} elseif (nline = 7) {
+              //  WRITE *12
+               // write !, line    
+            //} elseif (nline = 12) {
+            //    WRITE *12
+              //  write !, line  
+            //} else {
+                
+              // set row.WholeLine = line
+              // set readvalue = $EXTRACT(line,1,42)
                //write !, "Current readvale is: "_readvalue_" i is currently: "_i
-               write readvalue ,!
+              
                 
                 
-            }
-        }    
-    }
+            //}
+        } else {
+            WRITE *12
+            write !, line 
+        }
+}
 }
 
 Storage Default
