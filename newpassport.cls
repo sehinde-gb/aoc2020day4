@@ -70,13 +70,14 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 
             } else {
                 write !, line
-                 For i=1:1:lline {
-                    set row.WholeLine = line
-                    set readvalue = $EXTRACT(line,i,i)
-                    write !, "Current readvale is: "_readvalue_" i is currently: "_i
+                // For i=1:1:lline {
+                  //  set row.WholeLine = line
+                    //set readvalue = $EXTRACT(line,i,i)
+                    //write !, "Current readvale is: "_readvalue_" i is currently: "_i
                     
-                    }
-                write row.WholeLine ,!
+                   // }
+                
+                //write row.WholeLine ,!
                 write nline ,!
                 //set status = row.%Save()
                 //write status ,!
@@ -96,7 +97,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     
     //Write !, "Import Complete"
 }
-    //write row ,!
 }
 
 Storage Default
