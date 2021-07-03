@@ -4,30 +4,6 @@ Class New.Passport Extends (%Persistent, %JSON.Adaptor)
 /// Description
 Property WholeLine As %String;
 
-/// initialise byr
-Property byr As %String(%JSONFIELDNAME = "byr");
-
-/// initialise iyr
-Property iyr As %String(%JSONFIELDNAME = "iyr");
-
-/// initialise eyr
-Property eyr As %String(%JSONFIELDNAME = "eyr");
-
-/// initialise hgt
-Property hgt As %String(%JSONFIELDNAME = "hgt");
-
-/// initialise hcl
-Property hcl As %String(%JSONFIELDNAME = "hcl");
-
-/// initialise ecl
-Property ecl As %String(%JSONFIELDNAME = "ecl");
-
-/// initialise pid
-Property pid As %String(%JSONFIELDNAME = "pid");
-
-/// initialise cid
-Property cid As %String(%JSONFIELDNAME = "cid");
-
 ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
     // Open my text file and check it exists
@@ -79,6 +55,27 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             }
         } 
     }
+}
+
+Storage Default
+{
+<Data name="PassportDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>WholeLine</Value>
+</Value>
+<Value name="3">
+<Value>cid</Value>
+</Value>
+</Data>
+<DataLocation>^New.PassportD</DataLocation>
+<DefaultData>PassportDefaultData</DefaultData>
+<IdLocation>^New.PassportD</IdLocation>
+<IndexLocation>^New.PassportI</IndexLocation>
+<StreamLocation>^New.PassportS</StreamLocation>
+<Type>%Storage.Persistent</Type>
 }
 
 }
