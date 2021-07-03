@@ -56,8 +56,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             set lline = $LENGTH(line)
             //write *12
             //write lline ,!
-            set test = $extract(line,1,26)
-            //set test1 = $EXTRACT(line,10,17) 
+            //set test = $extract(line,1,26)
+            set test = $EXTRACT(line,1,42) 
             write !, "test"
             write test ,!
 
