@@ -63,10 +63,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 
             } elseif (nline = 7) {
                 WRITE *12
+                write !, lline
                 write !, line
                 
             } elseif (nline = 12) {
                 WRITE *12
+                write !, lline
                 write !, line
                 
             } else {
