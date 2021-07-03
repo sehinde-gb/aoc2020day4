@@ -51,12 +51,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             //read line of text from file
            
             set row = ##class(New.Passport).%New()
-             if (nline=2) {
-                SET formfeed=$CHAR(10)
-            } 
+            
             // get length of line
             set lline = $LENGTH(line)
-            write !, line
+            write !, line   
+            WRITE *27
            
         //set status = row.%Save()
         }
