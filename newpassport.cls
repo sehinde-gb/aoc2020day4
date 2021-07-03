@@ -58,6 +58,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
             if (nline = 4) {
                 write *12
+                write !, lline
                 write !, line
                 
             } elseif (nline = 7) {
