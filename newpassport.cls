@@ -24,7 +24,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         // create nline and go through each line of text from file whilst incrementing the counter
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
-        write *12
+        
         IF (nline >= 1) & (line '= "") {
                 
             //read line of text from file
@@ -49,9 +49,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write !, line  
             } else {
                 
-               set row.WholeLine = line
-               set readvalue = $EXTRACT(line,1,42)
-               write readvalue ,!
+               //set row.WholeLine = line
+               //set readvalue = $EXTRACT(line,1,42)
+               //write readvalue ,!
                //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
             }
         } 
