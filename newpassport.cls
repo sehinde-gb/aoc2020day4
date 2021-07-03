@@ -69,7 +69,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             } else {
                 write !, line
                 set $EXTRACT(line,4,8)=""
-                write line
+                write !, line
             }
             
 
