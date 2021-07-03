@@ -69,11 +69,17 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write !, line
                 
             } else {
-                //write !, line
-                //write !, nline
-                write !, "post Extraction"
-                set $EXTRACT(line,1,7)=""
                 write !, line
+                 For i=1:8:lline {
+                    set row.WholeLine = line
+                    set readvalue = $EXTRACT(line,i,i)
+                    write !, "Current readvale is: "_readvalue_" i is currently: "_i
+                    }
+
+                //write !, nline
+                //write !, "post Extraction"
+                //set $EXTRACT(line,1,7)=""
+                //write !, line
             }
             
 
