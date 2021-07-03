@@ -54,8 +54,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
             // get length of line
             set lline = $LENGTH(line)
+            write *12
             write lline ,!
-            
+
             For i=1:1:lline {
                     set row.WholeLine = line
                     set readvalue = $EXTRACT(line,i,i)
