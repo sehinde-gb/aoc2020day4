@@ -70,7 +70,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 
             } else {
                 write !, line
-                write nline ,!
+                //write nline ,!
                 // For i=1:1:lline {
                   //  set row.WholeLine = line
                     //set readvalue = $EXTRACT(line,i,i)
