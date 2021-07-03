@@ -54,7 +54,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
             // get length of line
             set lline = $LENGTH(line)
-            if (nline = 2) {
+            if (nline = 3) {
                 WRITE *12
                 write !, line
             } else {
