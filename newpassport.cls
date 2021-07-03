@@ -93,7 +93,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     
     //Write !, "Import Complete"
 }
-    write row ,!
+    //write row ,!
 }
 
 Storage Default
