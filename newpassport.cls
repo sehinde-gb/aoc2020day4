@@ -110,12 +110,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 }
             //write lline ,!
             //write row.WholeLine ,!
-            set test = $extract(line,1,8)
-            set test1 = $EXTRACT(line,10,17) 
+            set test = $extract(line,1,26)
+            //set test1 = $EXTRACT(line,10,17) 
             write !, "test"
             write test ,!
-            write !, "test1"
-            write test1 ,!
+            //write !, "test1"
+            //write test1 ,!
 }
 
 Storage Default
