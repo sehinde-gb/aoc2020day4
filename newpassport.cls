@@ -28,7 +28,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
         set readvalue=$LISTFROMSTRING(line," ")
-        write !,"Ist element: ", $LIST(readvalue,1)
+        write !,"Ist element: ",$LIST(readvalue,1)
         //set readvalue = $EXTRACT(line,1,42)
         
 
