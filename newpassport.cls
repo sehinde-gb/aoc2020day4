@@ -26,23 +26,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
         write !, line 
-        kill chars
-        set D=0
-        for pos=1:1:$length(line) {
-            set count=0
-            if (count=4) {
-                
-                write *12
-                //write !, line
-            } elseif (count=12) & (count=7) {
-               set D=D+1
-               write *12
-               //write !, line 
-            }
-            write !, line 
-        }
 
-           write "We are saving your object now:",!
+        write "We are saving your object now:",!
         /// create new object and set it to import as a json object 
         set obj =..%New()
         set sts=obj.%JSONImport(line,"")
@@ -52,20 +37,37 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set sts = obj.%Save()
         
         /// inform everyone that we have saved the object
-        if sts {
-            write "Saved, ID=",obj.%Id(),!
-            quit 1
+        #; if sts {
+        #;     write "Saved, ID=",obj.%Id(),!
+        #;     quit 1
             
-        } else {
+        #; } else {
 
-            write "Not saved, Err=",$system.Status.GetOneErrorText(sts),!
-            quit 0
-        }
+        #;     write "Not saved, Err=",$system.Status.GetOneErrorText(sts),!
+        #;     quit 0
+        #; }
         
-        } else {
-            write "Can't import: ",$system.Status.GetOneErrorText(sts),!
-            quit 0
-        }
+        #; } else {
+        #;     write "Can't import: ",$system.Status.GetOneErrorText(sts),!
+        #;     quit 0
+        #; }
+        //kill chars
+        //set D=0
+        #; for pos=1:1:$length(line) {
+        #;     set count=0
+        #;     if (count=4) {
+                
+        #;         write *12
+        #;         //write !, line
+        #;     } elseif (count=12) & (count=7) {
+        #;        set D=D+1
+        #;        write *12
+        #;        //write !, line 
+        #;     }
+        #;     write !, line 
+        #; }
+
+           
              
         
 
@@ -124,6 +126,7 @@ Storage Default
 <IndexLocation>^New.PassportI</IndexLocation>
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
+}
 }
 
 }
