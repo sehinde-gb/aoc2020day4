@@ -24,37 +24,46 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         // create nline and go through each line of text from file whilst incrementing the counter
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
-        
-        IF (nline >= 1) & (line '= "") {
-                
-            //read line of text from file
-           
-            set row = ##class(New.Passport).%New()
-            
-            // get length of line
-            set lline = $LENGTH(line)
+        IF (nline >= 1) & (nline =3) & (line '= ""){
+             write !, line
+        } elseif (nline=4) & (nline=7) & (nline=12) & (line '= "") {
+            write *12
+            write !, line
+        } else {
+            Write !, "Wrong"
+        }
 
-            set row.WholeLine = line
-            set readvalue = $EXTRACT(line,1,42)
-            write readvalue ,!
-            
-            if (nline = 4) {
-                write *12
-                write !, line
-            } elseif (nline = 7) {
-                WRITE *12
-                write !, line    
-            } elseif (nline = 12) {
-                WRITE *12
-                write !, line  
-            } else {
+        
+        #; IF (nline >= 1) & (line '= "") {
                 
-               //set row.WholeLine = line
-               //set readvalue = $EXTRACT(line,1,42)
-               //write readvalue ,!
-               //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
-            }
-        } 
+        #;     //read line of text from file
+           
+        #;     set row = ##class(New.Passport).%New()
+            
+        #;     // get length of line
+        #;     set lline = $LENGTH(line)
+
+        #;     set row.WholeLine = line
+        #;     set readvalue = $EXTRACT(line,1,42)
+        #;     write readvalue ,!
+            
+        #;     if (nline = 4) {
+        #;         write *12
+        #;         write !, line
+        #;     } elseif (nline = 7) {
+        #;         WRITE *12
+        #;         write !, line    
+        #;     } elseif (nline = 12) {
+        #;         WRITE *12
+        #;         write !, line  
+        #;     } else {
+                
+        #;        //set row.WholeLine = line
+        #;        //set readvalue = $EXTRACT(line,1,42)
+        #;        //write readvalue ,!
+        #;        //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
+        #;     }
+        #; } 
     }
 }
 
@@ -78,5 +87,23 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
