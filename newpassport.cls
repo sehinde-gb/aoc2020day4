@@ -63,8 +63,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         #;        //write readvalue ,!
         #;        //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
         #;     }
-        #; } 
-    }
+        }
 }
 
 Storage Default
@@ -87,23 +86,5 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
