@@ -20,8 +20,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set sc = file.LinkToFile(dir)
     
     set line = file.ReadLine()
-    set linelist =$LISTBUILD(line)
-    write linelist ,! 
+    write line ,!
+    //set linelist =$LISTBUILD(line)
+    //write linelist ,! 
     //set $LISTGET(a,b)=linelist
     //WRITE "a=",a," b=",b
     //set readvalue=$LISTFROMSTRING(line," ")
