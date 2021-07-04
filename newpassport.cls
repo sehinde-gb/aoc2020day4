@@ -25,7 +25,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         // create nline and go through each line of text from file whilst incrementing the counter
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
-        //write !, line 
+        write !, line 
         kill chars
         set D=0
         for pos=1:1:$length(line) {
@@ -44,16 +44,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
 
 
-        
-        #; IF (nline >= 1) & (nline=3) & (line '= ""){
-        #;      write !, line
-        #; } elseif (nline=4) & (nline=7) & (nline=12) & (line '= "") {
-        #;     write *12
-        #;     write !, line
-        #; } else {
-        #;     Write !, "Wrong"
-        #; }
-
+       
         
         #; IF (nline >= 1) & (line '= "") {
                 
