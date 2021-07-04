@@ -18,6 +18,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set file = ##class(%Stream.FileCharacter).%New()
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
+    
+    set line = file.ReadLine()
+    set readvalue=$LISTFROMSTRING(line," ")
+    write !,"Ist element: ",$LIST(readvalue,1)
     WHILE ('file.AtEnd) {
         //read line of text from file
         set line = file.ReadLine()
