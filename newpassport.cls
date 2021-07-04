@@ -24,10 +24,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         // create nline and go through each line of text from file whilst incrementing the counter
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
-        write !, line 
+        //write !, line 
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
         set readvalue = $EXTRACT(line,1,42)
+        write !, readvalue
         #; IF (nline >= 1) & (nline=3) & (line '= ""){
         #;      write !, line
         #; } elseif (nline=4) & (nline=7) & (nline=12) & (line '= "") {
