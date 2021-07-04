@@ -25,19 +25,19 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
         write !, line 
-        #; IF (nline >= 1) & (nline =3) & (line '= ""){
-        #;      write !, line
-        #; } elseif (nline=4) & (nline=7) & (nline=12) & (line '= "") {
-        #;     write *12
-        #;     write !, line
-        #; } else {
-        #;     Write !, "Wrong"
-        #; }
+        IF (nline >= 1) & (nline=3) & (line '= ""){
+             write !, line
+        } elseif (nline=4) & (nline=7) & (nline=12) & (line '= "") {
+            write *12
+            write !, line
+        } else {
+            Write !, "Wrong"
+        }
 
         
         #; IF (nline >= 1) & (line '= "") {
                 
-                
+
         #;     //read line of text from file
            
         #;     set row = ##class(New.Passport).%New()
