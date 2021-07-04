@@ -26,14 +26,21 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set nline = $INCREMENT(nline)
         //if line exists loop through each line until no more lines
         //write !, line 
-        set row = ##class(New.Passport).%New() 
-        set row.WholeLine = line
-        set linelist =$LISTBUILD(row.WholeLine)
-        //write linelist ,!
-        set $LISTGET(a)=linelist
-        WRITE "a=",a,!
-
-        //set readvalue = $EXTRACT(line,1,42)
+        kill chars
+        set D=0
+        for pos=1:1:$length(line) {
+            set count=$increment(chars($extract(line,pos)))
+            if (count=4) {
+                set D=D+1
+                write *12
+                write !, line
+            } elseif (count=12) & (count=7) {
+               set D=D+1
+               write *12
+               write !, line 
+            }
+            write !, line 
+        }
         
 
 
