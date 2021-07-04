@@ -33,11 +33,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             if (count=4) {
                 set D=D+1
                 write *12
-                write !, line
+                //write !, line
             } elseif (count=12) & (count=7) {
                set D=D+1
                write *12
-               write !, line 
+               //write !, line 
             }
             write !, line 
         }
