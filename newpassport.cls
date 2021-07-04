@@ -31,7 +31,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         for pos=1:1:$length(line) {
             set count=0
             if (count=4) {
-                set D=D+1
+                
                 write *12
                 //write !, line
             } elseif (count=12) & (count=7) {
