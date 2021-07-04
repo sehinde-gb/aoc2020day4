@@ -21,8 +21,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     
     set line = file.ReadLine()
     set linelist =$LISTBUILD(line) 
-    set readvalue=$LISTFROMSTRING(line," ")
-    write !,"Ist element: ",$LIST(readvalue,1)
+    set $LISTGET(a,b)=linelist
+    WRITE "a=",a," b=",b
+    //set readvalue=$LISTFROMSTRING(line," ")
+    //write !,"Ist element: ",$LIST(readvalue,1)
 
     /* WHILE ('file.AtEnd) {
         //read line of text from file
