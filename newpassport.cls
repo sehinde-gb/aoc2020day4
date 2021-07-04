@@ -27,8 +27,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, line 
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
-        //set readvalue = $EXTRACT(line,1,42)
-        set $extract(readvalue, 1, 50) = "ecl:gry pid:860033327 eyr:2020 hcl:#fffffd byr:1937 iyr:2017 cid:147 hgt:183cm"
+        set readvalue = $EXTRACT(line,1,42)
+        
 
         write !, readvalue
         #; IF (nline >= 1) & (nline=3) & (line '= ""){
