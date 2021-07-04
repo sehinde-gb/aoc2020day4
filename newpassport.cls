@@ -45,7 +45,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
            write "We are saving your object now:",!
         /// create new object and set it to import as a json object 
         set obj =..%New()
-        set sts=obj.%JSONImport(pass4,"")
+        set sts=obj.%JSONImport(line,"")
 
         /// save the object
         if sts {
