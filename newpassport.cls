@@ -41,6 +41,32 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             }
             write !, line 
         }
+
+           write "We are saving your object now:",!
+        /// create new object and set it to import as a json object 
+        set obj =..%New()
+        set sts=obj.%JSONImport(pass4,"")
+
+        /// save the object
+        if sts {
+        set sts = obj.%Save()
+        
+        /// inform everyone that we have saved the object
+        if sts {
+            write "Saved, ID=",obj.%Id(),!
+            quit 1
+            
+        } else {
+
+            write "Not saved, Err=",$system.Status.GetOneErrorText(sts),!
+            quit 0
+        }
+        
+        } else {
+            write "Can't import: ",$system.Status.GetOneErrorText(sts),!
+            quit 0
+        }
+             
         
 
 
