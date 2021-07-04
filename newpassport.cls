@@ -28,6 +28,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
         set readvalue = $EXTRACT(line,1,42)
+        set $extract(readvalue, 4, 5) = "12345"
+
         write !, readvalue
         #; IF (nline >= 1) & (nline=3) & (line '= ""){
         #;      write !, line
