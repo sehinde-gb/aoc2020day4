@@ -29,7 +29,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
         set linelist =$LISTBUILD(row.WholeLine)
-        write linelist ,!
+        //write linelist ,!
         set $LISTGET(a)=linelist
         WRITE "a=",a,!
 
