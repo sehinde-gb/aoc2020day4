@@ -28,7 +28,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
         //set readvalue = $EXTRACT(line,1,42)
-        set readvalue = $PIECE(line, ",)
+        set readvalue = $PIECE(line, "")="Purple"
+        
 
         write !, readvalue
         #; IF (nline >= 1) & (nline=3) & (line '= ""){
