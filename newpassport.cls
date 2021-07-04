@@ -20,9 +20,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set sc = file.LinkToFile(dir)
     
     set line = file.ReadLine()
+    set linelist =$LISTBUILD(line) 
     set readvalue=$LISTFROMSTRING(line," ")
     write !,"Ist element: ",$LIST(readvalue,1)
-    WHILE ('file.AtEnd) {
+
+    /* WHILE ('file.AtEnd) {
         //read line of text from file
         set line = file.ReadLine()
         // create nline and go through each line of text from file whilst incrementing the counter
@@ -80,7 +82,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         #;        //write readvalue ,!
         #;        //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
         #;     }
-        }
+        } */
 }
 
 Storage Default
