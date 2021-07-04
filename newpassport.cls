@@ -18,17 +18,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set file = ##class(%Stream.FileCharacter).%New()
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
-    
-    set line = file.ReadLine()
-    write line ,!
-    //set linelist =$LISTBUILD(line)
-    //write linelist ,! 
-    //set $LISTGET(a,b)=linelist
-    //WRITE "a=",a," b=",b
-    //set readvalue=$LISTFROMSTRING(line," ")
-    //write !,"Ist element: ",$LIST(readvalue,1)
 
-    /* WHILE ('file.AtEnd) {
+    WHILE ('file.AtEnd) {
         //read line of text from file
         set line = file.ReadLine()
         // create nline and go through each line of text from file whilst incrementing the counter
@@ -37,10 +28,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, line 
         set row = ##class(New.Passport).%New() 
         set row.WholeLine = line
-        set readvalue=$LISTFROMSTRING(line," ")
-        //write !, readvalue
-        write !,"Ist element: ",$LIST(readvalue,1)
-        write !,"2nd element: ",$LIST(readvalue,2)
+        set linelist =$LISTBUILD(row.WholeLine)
+        write linelist ,!
+        set $LISTGET(a)=linelist
+        WRITE "a=",a,!
+
         //set readvalue = $EXTRACT(line,1,42)
         
 
@@ -86,7 +78,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         #;        //write readvalue ,!
         #;        //write !, "Current readvalue is: "_readvalue_" i is currently: "_i
         #;     }
-        } */
+        }
 }
 
 Storage Default
