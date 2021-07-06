@@ -60,7 +60,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //set obj.WholeLine = readvalue
         //set status = obj.%Save()
         //write obj.WholeLine ,!
-        do file.Close()
+        //do file.Close()
 }
 
 Storage Default
