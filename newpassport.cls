@@ -58,6 +58,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write !, "Current readvale is: "_readvalue_" i is currently: "_i
                 }
                 set status = row.%Save()
+                write status ,!
                 write !, "row saved"
             }
             //set passlist=$LISTFROMSTRING(line, " ")
