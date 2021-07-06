@@ -34,7 +34,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write extracted ,! 
         set obj.WholeLine = extracted
         write obj.WholeLine
-        set status = obj.extracted.%Save 
+        set status = obj.WholeLine.%Save 
         //Write !, "Import Complete" 
         
     }
