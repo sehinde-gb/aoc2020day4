@@ -36,12 +36,13 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !,$find(obj.WholeLine, "ecl:gry")
         write obj.WholeLine
         do obj.%Save()
-        set namelist=$LISTFROMSTRING(extracted," ")
-        write !, "1st element: ",$LIST(namelist,1)
+        
         //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
+        set namelist=$LISTFROMSTRING(extracted," ")
+        write !, "1st element: ",$LIST(namelist,1)
         
         
         //set status = obj.%Save()
