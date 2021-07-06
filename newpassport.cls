@@ -61,6 +61,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         /// save the object
         if sts {
         set sts = obj.%Save()
+        write sts
         set objectfound = $INCREMENT(objectfound)
         }
     }    
