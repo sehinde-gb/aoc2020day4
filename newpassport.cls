@@ -36,9 +36,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write $piece(obj.WholeLine," ")
         //write !,$find(obj.WholeLine, "ecl:gry")
         write obj.WholeLine
-        //do obj.%Save()
+        do obj.%Save()
         
-        //write "Object ID: ",obj.%Id(),!
+        write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
