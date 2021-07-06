@@ -51,9 +51,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             set lline = $LENGTH(line)
             set passlist=$LISTFROMSTRING(line, " ")
             write !,"Element:",$LIST(passlist,1)
-            write
             
             
+
             write "We are saving your object now:",!
             /// create new object and set it to import as a json object 
             set obj =..%New()
