@@ -49,13 +49,13 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         IF (nline >= 1) & (line '= "") {
             write !, "nline loop started"
             set lline = $LENGTH(line)
-            write line ,!
+            //write line ,!
             //set passlist=$LISTFROMSTRING(line, " ")
             //write !,"Element:",$LIST(passlist,1)
             
             
 
-            write "We are saving your object now:",!
+            //write "We are saving your object now:",!
             /// create new object and set it to import as a json object 
             //set obj =..%New()
             //set sts=obj.FirstLine
