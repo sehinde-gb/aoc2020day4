@@ -42,22 +42,21 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
     write sc ,!
+    set obj = ##class(New.Passport).%New()
+    set line = file.ReadLine()
+    set lline = $LENGTH(line)
+
     WHILE ('file.AtEnd) {
-        set line = file.ReadLine()
+        
         write !, "nline loop started"
         //write line ,!
-        set obj = ##class(New.Passport).%New()
-        
-        set lline = $LENGTH(line)
         set extracted = $EXTRACT(line,1,lline)
         write extracted ,! 
-        //set readvalue = $LISTFROMSTRING(line,"")
-        //zwrite readvalue
         
     }
-        set obj.WholeLine = extracted
-        write obj.WholeLine
-        Write !, "Import Complete" 
+        //set obj.WholeLine = extracted
+        //write obj.WholeLine
+        //Write !, "Import Complete" 
         
         //set status = obj.%Save()
         //write obj.WholeLine ,!
