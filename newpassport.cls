@@ -51,11 +51,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
         set readvalue = $EXTRACT(line,1,lline)
         //set test = $LISTFROMSTRING(line)
-        write readvalue ,!
        
-        set row.readvalue = readvalue
         //write row.WholeLine
-        set status = row.%Save()
+        set status = readvalue.%Save()
+        write status ,!
         //write !, "status is:"
         //write status ,!
         //write !, "row saved"
@@ -69,10 +68,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         #;         set objectfound = $INCREMENT(objectfound)
         #;     }
     }
-        set status = readvalue.%Save()
-        write status ,!
+        //set status = readvalue.%Save()
+        //write status ,!
         
-        set row.ObjectFound=1
+        //set row.ObjectFound=1
 }
 
 Storage Default
