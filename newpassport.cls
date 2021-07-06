@@ -34,7 +34,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write extracted ,!
         set obj.WholeLine = extracted
         write obj.WholeLine
-        set e 
+        write !, "Extract:"
+        set passport1 = $EXTRACT(obj.WholeLine,1,77)
+
         //set extralist=$LISTFROMSTRING(extracted," ")
         //write extralist ,!
 
