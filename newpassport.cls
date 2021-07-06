@@ -43,9 +43,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set sc = file.LinkToFile(dir)
 
     WHILE ('file.AtEnd) {
-        
-        set objectfound=0
-        set validlist=0
 
         set line = file.ReadLine()
         //write !, "nline loop started"
@@ -53,13 +50,14 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set lline = $LENGTH(line)
         
         //set readvalue = $EXTRACT(line,1,lline)
-        set readvalue = $LISTFROMSTRING(row.WholeLine)
-        write readvalue ,!
-        set row.WholeLine = readvalue
+        set row.WholeLine = $LISTFROMSTRING(line)
+        //write readvalue ,!
+       
         do row.WholeLine.%Save()
+        
         set row.ObjectFound=1
         
-        write row.WholeLine
+        //write row.WholeLine
         //set status = row.%Save()
         //write !, "status is:"
         //write status ,!
