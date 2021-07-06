@@ -56,12 +56,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         write "We are saving your object now:",!
         /// create new object and set it to import as a json object 
         set obj =..%New()
-        set sts=obj.%JSONImport(line,"")
+        set sts=obj.passlist
 
         /// save the object
         if sts {
         set sts = obj.%Save()
-        
+        set objectfound = $INCREMENT(objectfound)
         }
     }    
 }
@@ -78,6 +78,36 @@ Storage Default
 </Value>
 <Value name="3">
 <Value>cid</Value>
+</Value>
+<Value name="4">
+<Value>FirstLine</Value>
+</Value>
+<Value name="5">
+<Value>SecondLine</Value>
+</Value>
+<Value name="6">
+<Value>ThirdLine</Value>
+</Value>
+<Value name="7">
+<Value>FourthLine</Value>
+</Value>
+<Value name="8">
+<Value>FifthLine</Value>
+</Value>
+<Value name="9">
+<Value>SixthLine</Value>
+</Value>
+<Value name="10">
+<Value>SeventhLine</Value>
+</Value>
+<Value name="11">
+<Value>EighthLine</Value>
+</Value>
+<Value name="12">
+<Value>NinethLine</Value>
+</Value>
+<Value name="13">
+<Value>TenthLine</Value>
 </Value>
 </Data>
 <DataLocation>^New.PassportD</DataLocation>
