@@ -52,19 +52,20 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row.WholeLine = line
         set readvalue = $EXTRACT(line,1,lline)
         write readvalue ,!
-        set status = row.%Save()
-        write !, "status is:"
-        write status ,!
-        write !, "row saved"
+        do row.%Save()
+        //set status = row.%Save()
+        //write !, "status is:"
+        //write status ,!
+        //write !, "row saved"
         
-        set obj =..%New()
-        set status=obj.FirstLine
-        /// save the object
-            if status {
-                set status = obj.%Save()
-                write status
-                set objectfound = $INCREMENT(objectfound)
-            }
+        #; set obj =..%New()
+        #; set status=obj.FirstLine
+        #; /// save the object
+        #;     if status {
+        #;         set status = obj.%Save()
+        #;         write status
+        #;         set objectfound = $INCREMENT(objectfound)
+        #;     }
     }
 }
 
