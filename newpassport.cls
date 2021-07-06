@@ -37,7 +37,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write $piece(obj.WholeLine," ")
         //write !,$find(obj.WholeLine, "ecl:gry")
         //write obj.WholeLine
-        set extralist=$LISTFROMSTRING(extracted, " ")
+        set extralist=$LISTFROMSTRING(extracted," ")
         write !,"4th",$LIST(extralist,1)
         do obj.%Save()
         
