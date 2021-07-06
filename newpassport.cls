@@ -42,6 +42,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
     }
         set namelist=$LISTBUILD(obj.WholeLine)
+        write !, "LIST Build"
         write !,$LISTGET(namelist,2)
         
         
