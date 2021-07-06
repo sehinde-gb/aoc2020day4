@@ -43,8 +43,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //Write !, "Import Complete" 
         
     }
-        set extralist=$LISTFROMSTRING(obj.WholeLine, " ")
-        write !,"4th",$LIST(extralist,4)
+        write obj.WholeLine
+        //set extralist=$LISTFROMSTRING(obj.WholeLine, " ")
+        //write !,"4th",$LIST(extralist,4)
         //set status = obj.%Save()
         //write obj.WholeLine ,!
         //do file.Close()
