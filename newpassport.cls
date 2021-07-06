@@ -52,11 +52,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
         write extracted ,! 
-        
-    }
-        //set obj.WholeLine = extracted
+        set obj.WholeLine = extracted
         //write obj.WholeLine
         //Write !, "Import Complete" 
+        
+    }
+        
         
         //set status = obj.%Save()
         //write obj.WholeLine ,!
