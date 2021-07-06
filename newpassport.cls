@@ -41,8 +41,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //Write !, "Import Complete" 
         
     }
-        set namelist=$LISTFROMSTRING(extracted," ")
-        write !, "2nd element: ",$LIST(namelist,2)
+        set namelist=$LISTFROMSTRING(obj.WholeLine," ")
+        write !, "2nd element: ",$LIST(namelist,1)
         
         
         //set status = obj.%Save()
