@@ -46,6 +46,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set validlist=0
 
         set line = file.ReadLine()
+        write *12
         write line ,! 
         #; IF (nline >= 1) & (line '= "") {
         #;     write !, "nline loop started"
