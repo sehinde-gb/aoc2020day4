@@ -49,15 +49,15 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj = ##class(New.Passport).%New()
         
         set lline = $LENGTH(line)
-        //set extracted = $EXTRACT(line,1,lline)
-        //write extracted ,! 
-        set readvalue = $LISTFROMSTRING(line,"")
-        zwrite readvalue
-        
-        
+        set extracted = $EXTRACT(line,1,lline)
+        write extracted ,! 
+        //set readvalue = $LISTFROMSTRING(line,"")
+        //zwrite readvalue
+        set obj.WholeLine = extracted
+        write obj.WholeLine
     }
         Write !, "Import Complete" 
-        //set obj.WholeLine = readvalue
+        
         //set status = obj.%Save()
         //write obj.WholeLine ,!
         //do file.Close()
