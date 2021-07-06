@@ -60,9 +60,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 write status ,!
                 write !, "row saved"
                 }
-                set status = row.%Save()
-                write status ,!
-                write !, "row saved"
+                
+                write !, "now"
             }
             //set passlist=$LISTFROMSTRING(line, " ")
             //write !,"Element:",$LIST(passlist,1)
