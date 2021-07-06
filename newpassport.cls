@@ -50,7 +50,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write !, "nline loop started"
             set lline = $LENGTH(line)
             set passlist=$LISTFROMSTRING(line, " ")
-            write !,"1st element:",$LIST(passlist,1)
+            write !,"Element:",$LIST(passlist,2)
         
 
         write "We are saving your object now:",!
