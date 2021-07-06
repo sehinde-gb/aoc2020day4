@@ -53,9 +53,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         write extracted ,! 
         //set readvalue = $LISTFROMSTRING(line,"")
         //zwrite readvalue
+        
+    }
         set obj.WholeLine = extracted
         write obj.WholeLine
-    }
         Write !, "Import Complete" 
         
         //set status = obj.%Save()
