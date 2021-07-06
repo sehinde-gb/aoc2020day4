@@ -42,9 +42,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
 
-    WHILE ('file.AtEnd) & ('file =""){
+    WHILE ('file.AtEnd) & ('file ="") {
         set line = file.ReadLine()
-        //write !, "nline loop started"
+        write !, "nline loop started"
         //write line ,!
         set obj = ##class(New.Passport).%New()
         
