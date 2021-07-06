@@ -56,9 +56,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
     }
         //write readvalue ,!
-        set obj.WholeLine = readvalue
-        set status = obj.%Save()
-        write obj.WholeLine ,!
+        //set obj.WholeLine = readvalue
+        //set status = obj.%Save()
+        //write obj.WholeLine ,!
 }
 
 Storage Default
