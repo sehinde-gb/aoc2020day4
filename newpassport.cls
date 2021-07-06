@@ -39,8 +39,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     }
         
         
-        //set status = obj.%Save()
-        //write obj.WholeLine ,!
+        set status = obj.%Save()
+        write obj.WholeLine ,!
         //do file.Close()
 }
 
