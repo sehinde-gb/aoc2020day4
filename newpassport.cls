@@ -50,22 +50,22 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write !, "nline loop started"
             set lline = $LENGTH(line)
             set passlist=$LISTFROMSTRING(line, " ")
-            write !,"Element:",$LIST(passlist,2)
+            write !,"Element:",$LIST(passlist,1)
         
+            set formfeed=$CHAR(12)
+            write "We are saving your object now:",!
+            /// create new object and set it to import as a json object 
+            set obj =..%New()
+            set sts=obj.FirstLine
 
-        write "We are saving your object now:",!
-        /// create new object and set it to import as a json object 
-        set obj =..%New()
-        set sts=obj.FirstLine
-
-        /// save the object
-        if sts {
-        set sts = obj.%Save()
-        write sts
-        set objectfound = $INCREMENT(objectfound)
-        }
-    }    
-}
+            /// save the object
+                if sts {
+                    set sts = obj.%Save()
+                    write sts
+                    set objectfound = $INCREMENT(objectfound)
+                }
+        }    
+    }
 }
 
 Storage Default
