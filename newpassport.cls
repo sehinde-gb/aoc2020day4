@@ -43,7 +43,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     }
         //SET namestring="Deborah Noah Martha Bowie"
         SET namelist=$LISTFROMSTRING(extracted," ")
-        WRITE !,"1st element: ",$LIST(namelist,3)
+        WRITE !,"1st element: ",$LIST(namelist,4)
         
         //set status = obj.%Save()
         //write obj.WholeLine ,!
