@@ -21,7 +21,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set file = ##class(%Stream.FileCharacter).%New()
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
-    write sc ,!
+    //write sc ,!
     
     
     WHILE ('file.AtEnd) {
@@ -32,7 +32,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
         set obj.WholeLine = extracted
-        write $piece(obj.WholeLine,"")
+        write $piece(obj.WholeLine," ")
         //write !,$find(obj.WholeLine, "ecl:gry")
         //write obj.WholeLine
         //do obj.%Save()
