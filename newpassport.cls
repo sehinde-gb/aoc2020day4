@@ -47,7 +47,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
         set line = file.ReadLine()
         
-        write line ,! 
+        //write line ,! 
         IF (nline >= 1) & (line '= "") {
             write !, "nline loop started"
             set row = ##class(New.Passport).%New() 
@@ -56,29 +56,29 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             
             For i=1:1:lline {
                 set row.WholeLine = line
-                
                 set readvalue = $EXTRACT(line,1,lline)
                 write readvalue ,!
                 }
                 set status = row.%Save()
                 write status ,!
                 write !, "row saved"
+                //write "We are saving your object now:",!
+            
+                //set obj =..%New()
+                //set sts=obj.FirstLine
+
+                /// save the object
+                //  if sts {
+                //    set sts = obj.%Save()
+                //  write sts
+                // set objectfound = $INCREMENT(objectfound)
+                //}
                 
             }
             
         
 
-            //write "We are saving your object now:",!
-            
-            //set obj =..%New()
-            //set sts=obj.FirstLine
-
-            /// save the object
-              //  if sts {
-                //    set sts = obj.%Save()
-                  //  write sts
-                   // set objectfound = $INCREMENT(objectfound)
-                //}
+           
     }
     //write line ,!
 }
