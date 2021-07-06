@@ -48,10 +48,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj = ##class(New.Passport).%New()
         set line = file.ReadLine()
         set lline = $LENGTH(line)
-        write !, "nline loop started"
+        //write !, "nline loop started"
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
-        write extracted ,! 
+        //write extracted ,! 
         set obj.WholeLine = extracted
         write obj.WholeLine
         //Write !, "Import Complete" 
