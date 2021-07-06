@@ -46,30 +46,29 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set validlist=0
 
         set line = file.ReadLine()
-        IF (nline >= 1) & (line '= "") {
-            write !, "nline loop started"
-            set row = ##class(New.Passport).%New() 
-            set lline = $LENGTH(line)
+        write line ,! 
+        #; IF (nline >= 1) & (line '= "") {
+        #;     write !, "nline loop started"
+        #;     set row = ##class(New.Passport).%New() 
+        #;     set lline = $LENGTH(line)
             
             
-            For i=1:1:lline {
-                set row.WholeLine = line
-                set passlist=$LISTFROMSTRING(row.WholeLine, "  ")
-                write passlist ,!
-                set status = row.%Save()
-                //write status ,!
-                write !, "row saved"
-                }
+        #;     For i=1:1:lline {
+        #;         set row.WholeLine = line
+        #;         set passlist=$LISTFROMSTRING(row.WholeLine, "  ")
+        #;         write passlist ,!
+        #;         set status = row.%Save()
+        #;         //write status ,!
+        #;         write !, "row saved"
+        #;         }
                 
-                write status ,!
-            }
-            //set passlist=$LISTFROMSTRING(line, " ")
-            //write !,"Element:",$LIST(passlist,1)
+        #;         write status ,!
+        #;     }
             
-            
+        
 
             //write "We are saving your object now:",!
-            /// create new object and set it to import as a json object 
+            
             //set obj =..%New()
             //set sts=obj.FirstLine
 
