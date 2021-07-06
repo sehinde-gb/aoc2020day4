@@ -50,12 +50,13 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
         set lline = $LENGTH(line)
         set readvalue = $EXTRACT(line,1,lline)
+        write readvalue ,!
         //set readvalue = $LISTFROMSTRING(line)
         //WRITE !,"1st element: ",$LIST(readvalue,1)
         
         
     }
-        write readvalue ,!
+        
         //set obj.WholeLine = readvalue
         //set status = obj.%Save()
         //write obj.WholeLine ,!
