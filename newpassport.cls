@@ -24,6 +24,8 @@ Property NinethLine As %String;
 
 Property TenthLine As %String;
 
+Property ObjectFound As %Integer;
+
 ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
    
@@ -54,7 +56,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set readvalue = $LISTFROMSTRING(row.WholeLine)
         write readvalue ,!
         do row.%Save()
+        set row.ObjectFound=1
         
+        write row.ObjectFound
         //set status = row.%Save()
         //write !, "status is:"
         //write status ,!
@@ -109,6 +113,9 @@ Storage Default
 </Value>
 <Value name="12">
 <Value>TenthLine</Value>
+</Value>
+<Value name="13">
+<Value>ObjectFound</Value>
 </Value>
 </Data>
 <DataLocation>^New.PassportD</DataLocation>
