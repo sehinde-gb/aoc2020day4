@@ -33,9 +33,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set extracted = $EXTRACT(line,1,lline)
         //write extracted ,! 
         set obj.WholeLine = extracted
-        write !,$find(obj.WholeLine, "ecl:gry")
-        //write obj.WholeLine
-        //do obj.%Save()
+        //write !,$find(obj.WholeLine, "ecl:gry")
+        write obj.WholeLine
+        do obj.%Save()
+        set namelist=$LISTFROMSTRING(extracted," ")
+        write !, "1st element: ",$LIST(namelist,1)
         //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
