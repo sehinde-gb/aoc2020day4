@@ -52,9 +52,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set readvalue = $EXTRACT(line,1,lline)
         //set test = $LISTFROMSTRING(line)
         
-        write readvalue ,!
+        
         
     }
+        write readvalue ,!
         set obj.WholeLine = readvalue
         set status = obj.%Save()
         write obj.WholeLine ,!
