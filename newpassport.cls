@@ -51,14 +51,15 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, "nline loop started"
         set row = ##class(New.Passport).%New() 
         set lline = $LENGTH(line)
-        set row.WholeLine = line
+        
         //set readvalue = $EXTRACT(line,1,lline)
         set readvalue = $LISTFROMSTRING(row.WholeLine)
         write readvalue ,!
-        do row.%Save()
+        set row.WholeLine = readvalue
+        do row.WholeLine.%Save()
         set row.ObjectFound=1
         
-        write row.ObjectFound
+        write row.WholeLine
         //set status = row.%Save()
         //write !, "status is:"
         //write status ,!
