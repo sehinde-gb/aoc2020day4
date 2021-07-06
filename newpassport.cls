@@ -80,7 +80,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                    // set objectfound = $INCREMENT(objectfound)
                 //}
     }
-    write line ,!
+    //write line ,!
 }
 
 Storage Default
