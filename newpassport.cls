@@ -31,7 +31,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, "nline loop started"
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
-        //write extracted ,! 
+        set formfeed=$CHAR(10)
         set obj.WholeLine = extracted
         //write !,$find(obj.WholeLine, "ecl:gry")
         write obj.WholeLine
@@ -42,12 +42,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
     }
         //set namelist=$LISTBUILD(obj.WholeLine)
-       set list=$LISTBUILD("ecl:gry", "pid:860033327", "eyr:2020", "hcl:#fffffd")
-       set llen=$LISTLENGTH(list)
-            for x=0:5 {
-                write "position ", x,"=",$LISTGET(list,x," no value"),!
-            } 
-            write "end of list"
+       
         
         //set status = obj.%Save()
         //write obj.WholeLine ,!
