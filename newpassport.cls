@@ -58,12 +58,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 set row.WholeLine = line
                 
                 set readvalue = $EXTRACT(line,1,lline)
-                set status = row.%Save()
-                //write status ,!
-                write !, "row saved"
+                write readvalue ,!
                 }
-                
+                set status = row.%Save()
                 write status ,!
+                write !, "row saved"
+                
             }
             
         
