@@ -46,7 +46,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
     }
         write !, "Extract:"
-        set passport1 = $EXTRACT(obj.WholeLine,1,77)
+        set passport1 = $EXTRACT(extracted,1,77)
 
         //write obj.WholeLine
         
