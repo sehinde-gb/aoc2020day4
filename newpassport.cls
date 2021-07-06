@@ -35,6 +35,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj.WholeLine = extracted
         write obj.WholeLine
         do obj.%Save()
+        write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
