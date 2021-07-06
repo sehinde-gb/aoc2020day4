@@ -48,10 +48,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         IF (nline >= 1) & (line '= "") {
             write !, "nline loop started"
+            set row = ##class(New.Passport).%New() 
             set lline = $LENGTH(line)
-            //write line ,!
+            //write !, line
+            
             For i=1:1:lline {
-                //set line = line
+                set row.WholeLine = line
                 set readvalue = $EXTRACT(line,i,i)
                 write !, "Current readvale is: "_readvalue_" i is currently: "_i
                 }
