@@ -31,9 +31,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, "nline loop started"
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
-        write extracted ,!
-        //set obj.WholeLine = extracted
-        //write $piece(obj.WholeLine," ")
+        //write extracted ,!
+        set obj.WholeLine = extracted
+        write $piece(obj.WholeLine," ")
         //write !,$find(obj.WholeLine, "ecl:gry")
         //write obj.WholeLine
         //do obj.%Save()
@@ -42,11 +42,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //Write !, "Import Complete" 
         
     }
-        //SET namestring="Deborah Noah Martha Bowie"
-        set namelist=$LISTFROMSTRING(extracted," ")
-        write n
-        //WRITE !,"1st element: ",$LIST(namelist,4)
-        
         //set status = obj.%Save()
         //write obj.WholeLine ,!
         //do file.Close()
