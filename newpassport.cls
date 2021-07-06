@@ -56,7 +56,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
     }
         
-        set status = obj.%Save()
+        set status = obj.readvalue
 }
 
 Storage Default
