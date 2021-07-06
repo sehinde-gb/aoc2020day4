@@ -42,12 +42,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
     write sc ,!
-    set obj = ##class(New.Passport).%New()
-    set line = file.ReadLine()
-    set lline = $LENGTH(line)
-
+    
+    
     WHILE ('file.AtEnd) {
-        
+        set obj = ##class(New.Passport).%New()
+        set line = file.ReadLine()
+        set lline = $LENGTH(line)
         write !, "nline loop started"
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
