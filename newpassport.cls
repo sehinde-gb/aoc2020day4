@@ -4,26 +4,6 @@ Class New.Passport Extends %Persistent
 /// Description
 Property WholeLine As %String;
 
-Property FirstLine As %String;
-
-Property SecondLine As %String;
-
-Property ThirdLine As %String;
-
-Property FourthLine As %String;
-
-Property FifthLine As %String;
-
-Property SixthLine As %String;
-
-Property SeventhLine As %String;
-
-Property EighthLine As %String;
-
-Property NinethLine As %String;
-
-Property TenthLine As %String;
-
 Property ObjectFound As %Integer;
 
 ClassMethod Import(dir As %String = "/usr/local/day4.txt")
