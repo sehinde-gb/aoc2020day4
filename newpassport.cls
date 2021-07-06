@@ -73,9 +73,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                   //  write sts
                    // set objectfound = $INCREMENT(objectfound)
                 //}
-        }
-}
-write line ,!
+    }
+    write line ,!
 }
 
 Storage Default
@@ -88,36 +87,33 @@ Storage Default
 <Value>WholeLine</Value>
 </Value>
 <Value name="3">
-<Value>cid</Value>
-</Value>
-<Value name="4">
 <Value>FirstLine</Value>
 </Value>
-<Value name="5">
+<Value name="4">
 <Value>SecondLine</Value>
 </Value>
-<Value name="6">
+<Value name="5">
 <Value>ThirdLine</Value>
 </Value>
-<Value name="7">
+<Value name="6">
 <Value>FourthLine</Value>
 </Value>
-<Value name="8">
+<Value name="7">
 <Value>FifthLine</Value>
 </Value>
-<Value name="9">
+<Value name="8">
 <Value>SixthLine</Value>
 </Value>
-<Value name="10">
+<Value name="9">
 <Value>SeventhLine</Value>
 </Value>
-<Value name="11">
+<Value name="10">
 <Value>EighthLine</Value>
 </Value>
-<Value name="12">
+<Value name="11">
 <Value>NinethLine</Value>
 </Value>
-<Value name="13">
+<Value name="12">
 <Value>TenthLine</Value>
 </Value>
 </Data>
