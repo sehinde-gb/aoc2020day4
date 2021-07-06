@@ -53,11 +53,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             set row = ##class(New.Passport).%New() 
             set lline = $LENGTH(line)
             
-            For i=1:1:lline {
+           
                 set row.WholeLine = line
                 set readvalue = $EXTRACT(line,1,lline)
                 write readvalue ,!
-                }
+                
                 set status = row.%Save()
                 write status ,!
                 write !, "row saved"
@@ -71,8 +71,6 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 //    set sts = obj.%Save()
                 //  write sts
                 // set objectfound = $INCREMENT(objectfound)
-                //}
-                
     }
 }
 
