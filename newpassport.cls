@@ -44,7 +44,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
     WHILE ('file.AtEnd) {
         set line = file.ReadLine()
-        write !, "nline loop started"
+        //write !, "nline loop started"
         //write line ,!
         set obj = ##class(New.Passport).%New()
         
