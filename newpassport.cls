@@ -69,9 +69,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         #;         set objectfound = $INCREMENT(objectfound)
         #;     }
     }
-        set status = row.%Save()
+        set status = readvalue.%Save()
         write status ,!
-        write row
+        
         set row.ObjectFound=1
 }
 
