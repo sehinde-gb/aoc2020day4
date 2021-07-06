@@ -53,9 +53,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //set test = $LISTFROMSTRING(line)
         write readvalue ,!
        
-        
+        set row.readvalue = readvalue
         //write row.WholeLine
-        //set status = row.%Save()
+        set status = row.%Save()
         //write !, "status is:"
         //write status ,!
         //write !, "row saved"
