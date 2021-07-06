@@ -57,7 +57,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             For i=1:1:lline {
                 set row.WholeLine = line
                 
-                set readvalue = $EXTRACT(line,1,42)
+                set readvalue = $EXTRACT(line,1,lline)
                 set status = row.%Save()
                 //write status ,!
                 write !, "row saved"
