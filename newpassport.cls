@@ -33,12 +33,14 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set extracted = $EXTRACT(line,1,lline)
         //write extracted ,!
         set obj.WholeLine = extracted
+        set extralist=$LISTFROMSTRING(obj.WholeLine, " ")
+        write !,"4th",$LIST(extralist,4)
         //write $piece(obj.WholeLine," ")
         //write !,$find(obj.WholeLine, "ecl:gry")
-        write obj.WholeLine
-        do obj.%Save()
+        //write obj.WholeLine
+        //do obj.%Save()
         
-        write "Object ID: ",obj.%Id(),!
+        //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
