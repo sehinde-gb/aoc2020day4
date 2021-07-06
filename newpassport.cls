@@ -49,9 +49,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row = ##class(New.Passport).%New() 
         set lline = $LENGTH(line)
         
-        //set readvalue = $EXTRACT(line,1,lline)
-        set test = $LISTFROMSTRING(line)
-        //write readvalue ,!
+        set readvalue = $EXTRACT(line,1,lline)
+        //set test = $LISTFROMSTRING(line)
+        write readvalue ,!
        
         
         //write row.WholeLine
