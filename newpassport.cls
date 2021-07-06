@@ -46,7 +46,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
         set line = file.ReadLine()
         //write !, "nline loop started"
-        set row = ##class(New.Passport).%New() 
+        set row = ##class(New.Passport).%New()
+        write row ,! 
         set lline = $LENGTH(line)
         
         set readvalue = $EXTRACT(line,1,lline)
