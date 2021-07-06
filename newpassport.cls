@@ -56,6 +56,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 set row.WholeLine = line
                 set readvalue = $EXTRACT(line,i,i)
                 write !, "Current readvale is: "_readvalue_" i is currently: "_i
+                set status = row.%Save()
+                write status ,!
+                write !, "row saved"
                 }
                 set status = row.%Save()
                 write status ,!
