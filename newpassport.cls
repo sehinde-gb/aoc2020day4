@@ -50,10 +50,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set lline = $LENGTH(line)
         
         //set readvalue = $EXTRACT(line,1,lline)
-        set row.WholeLine = $LISTFROMSTRING(line)
+        set test = $LISTFROMSTRING(line)
         //write readvalue ,!
        
-        do row.WholeLine.%Save()
+        do test.%Save()
         
         set row.ObjectFound=1
         
