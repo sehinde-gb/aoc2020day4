@@ -36,16 +36,17 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
        
         //write $piece(obj.WholeLine," ")
         //write !,$find(obj.WholeLine, "ecl:gry")
-        write obj.WholeLine
+        //write obj.WholeLine
+        set extralist=$LISTFROMSTRING(obj.WholeLine, " ")
+        write !,"4th",$LIST(extralist,4)
         do obj.%Save()
         
         //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
-        write obj.WholeLine
-        //set extralist=$LISTFROMSTRING(obj.WholeLine, " ")
-        //write !,"4th",$LIST(extralist,4)
+        //write obj.WholeLine
+        
         //set status = obj.%Save()
         //write obj.WholeLine ,!
         //do file.Close()
