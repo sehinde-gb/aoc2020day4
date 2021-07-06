@@ -33,10 +33,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set extracted = $EXTRACT(line,1,lline)
         //write extracted ,!
         set obj.WholeLine = extracted
-       
-        write $piece(obj.WholeLine," ")
-        write !,$find(obj.WholeLine, "ecl:gry")
-        //write obj.WholeLine
+        write obj.WholeLine
         //set extralist=$LISTFROMSTRING(extracted," ")
         //write extralist ,!
 
