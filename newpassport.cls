@@ -48,23 +48,23 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         
         write line ,! 
-        #; IF (nline >= 1) & (line '= "") {
-        #;     write !, "nline loop started"
-        #;     set row = ##class(New.Passport).%New() 
-        #;     set lline = $LENGTH(line)
+        IF (nline >= 1) & (line '= "") {
+            write !, "nline loop started"
+            set row = ##class(New.Passport).%New() 
+            set lline = $LENGTH(line)
             
             
-        #;     For i=1:1:lline {
-        #;         set row.WholeLine = line
-        #;         set passlist=$LISTFROMSTRING(row.WholeLine, "  ")
-        #;         write passlist ,!
-        #;         set status = row.%Save()
-        #;         //write status ,!
-        #;         write !, "row saved"
-        #;         }
+            For i=1:1:lline {
+                set row.WholeLine = line
                 
-        #;         write status ,!
-        #;     }
+                set readvalue = $EXTRACT(line,1,42)
+                set status = row.%Save()
+                //write status ,!
+                write !, "row saved"
+                }
+                
+                write status ,!
+            }
             
         
 
