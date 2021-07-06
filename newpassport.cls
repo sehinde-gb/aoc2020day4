@@ -34,8 +34,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj.WholeLine = extracted
         write $piece(obj.WholeLine,"")
         //write !,$find(obj.WholeLine, "ecl:gry")
-        write obj.WholeLine
-        do obj.%Save()
+        //write obj.WholeLine
+        //do obj.%Save()
         
         //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
