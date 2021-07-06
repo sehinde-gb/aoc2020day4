@@ -42,7 +42,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
     }
         set namelist=$LISTFROMSTRING(obj.WholeLine," ")
-        write !, "2nd element: ",$LIST(namelist,2)
+        write !, "13th element: ",$LIST(namelist,13)
         
         
         //set status = obj.%Save()
