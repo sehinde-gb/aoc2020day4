@@ -41,7 +41,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set file = ##class(%Stream.FileCharacter).%New()
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
-
+    write sc ,!
     WHILE ('file.AtEnd) & ('file ="") {
         set line = file.ReadLine()
         write !, "nline loop started"
