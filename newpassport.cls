@@ -50,6 +50,13 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             write !, "nline loop started"
             set lline = $LENGTH(line)
             //write line ,!
+            For i=1:1:lline {
+                set line.WholeLine = line
+                set readvalue = $EXTRACT(line,i,i)
+                write !, "Current readvale is: "_readvalue_" i is currently: "_i
+                }
+                set status = line.%Save()
+            }
             //set passlist=$LISTFROMSTRING(line, " ")
             //write !,"Element:",$LIST(passlist,1)
             
@@ -67,9 +74,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                    // set objectfound = $INCREMENT(objectfound)
                 //}
         }
-
-    }
-    write line ,!
+}
+write line ,!
 }
 
 Storage Default
