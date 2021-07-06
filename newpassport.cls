@@ -41,10 +41,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //Write !, "Import Complete" 
         
     }
-        set namelist=$LISTBUILD(obj.WholeLine)
-        write !, "LIST Build"
-        write !,$LISTGET(namelist,2)
-        
+        //set namelist=$LISTBUILD(obj.WholeLine)
+       set list=$LISTBUILD("ecl:gry", "pid:860033327", "eyr:2020", "hcl:#fffffd")
+       set llen=$ 
         
         //set status = obj.%Save()
         //write obj.WholeLine ,!
