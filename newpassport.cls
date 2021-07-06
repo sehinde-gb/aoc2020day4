@@ -56,11 +56,62 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
         
     }
-        
+        Write !, "Import Complete" 
         //set obj.WholeLine = readvalue
         //set status = obj.%Save()
         //write obj.WholeLine ,!
         //do file.Close()
+}
+
+Storage Default
+{
+<Data name="PassportDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>WholeLine</Value>
+</Value>
+<Value name="3">
+<Value>FirstLine</Value>
+</Value>
+<Value name="4">
+<Value>SecondLine</Value>
+</Value>
+<Value name="5">
+<Value>ThirdLine</Value>
+</Value>
+<Value name="6">
+<Value>FourthLine</Value>
+</Value>
+<Value name="7">
+<Value>FifthLine</Value>
+</Value>
+<Value name="8">
+<Value>SixthLine</Value>
+</Value>
+<Value name="9">
+<Value>SeventhLine</Value>
+</Value>
+<Value name="10">
+<Value>EighthLine</Value>
+</Value>
+<Value name="11">
+<Value>NinethLine</Value>
+</Value>
+<Value name="12">
+<Value>TenthLine</Value>
+</Value>
+<Value name="13">
+<Value>ObjectFound</Value>
+</Value>
+</Data>
+<DataLocation>^New.PassportD</DataLocation>
+<DefaultData>PassportDefaultData</DefaultData>
+<IdLocation>^New.PassportD</IdLocation>
+<IndexLocation>^New.PassportI</IndexLocation>
+<StreamLocation>^New.PassportS</StreamLocation>
+<Type>%Storage.Persistent</Type>
 }
 
 }
