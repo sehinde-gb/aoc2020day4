@@ -46,33 +46,19 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 
         set line = file.ReadLine()
         //write !, "nline loop started"
-        set row = ##class(New.Passport).%New()
-        write row ,! 
-        set lline = $LENGTH(line)
+        set obj = ##class(New.Passport).%New()
         
+        set lline = $LENGTH(line)
         set readvalue = $EXTRACT(line,1,lline)
         //set test = $LISTFROMSTRING(line)
-       
-        //write row.WholeLine
-        set status = row.%Save()
-        write status ,!
-        //write !, "status is:"
-        //write status ,!
-        //write !, "row saved"
         
-        #; set obj =..%New()
-        #; set status=obj.FirstLine
-        #; /// save the object
-        #;     if status {
-        #;         set status = obj.%Save()
-        #;         write status
-        #;         set objectfound = $INCREMENT(objectfound)
-        #;     }
+        //write status ,!
+        
+        
+        
     }
-        //set status = readvalue.%Save()
-        //write status ,!
         
-        //set row.ObjectFound=1
+        set status = obj.%Save()
 }
 
 Storage Default
@@ -125,5 +111,7 @@ Storage Default
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+}
+
 
 }
