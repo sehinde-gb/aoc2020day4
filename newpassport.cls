@@ -43,9 +43,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set sc = file.LinkToFile(dir)
 
     WHILE ('file.AtEnd) {
-
         set line = file.ReadLine()
         //write !, "nline loop started"
+        write line ,!
         set obj = ##class(New.Passport).%New()
         
         set lline = $LENGTH(line)
@@ -110,6 +110,11 @@ Storage Default
 <Type>%Storage.Persistent</Type>
 }
 }
+
+
+
+
+
 
 
 
