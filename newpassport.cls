@@ -41,8 +41,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //Write !, "Import Complete" 
         
     }
-        //set namelist=$LISTBUILD(obj.WholeLine)
-       
+        SET namestring="Deborah Noah Martha Bowie"
+        SET namelist=$LISTFROMSTRING(namestring," ")
+        WRITE !,"1st element: ",$LIST(namelist,1)
         
         //set status = obj.%Save()
         //write obj.WholeLine ,!
