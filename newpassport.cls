@@ -50,7 +50,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set row = ##class(New.Passport).%New() 
         set lline = $LENGTH(line)
         set row.WholeLine = line
-        set readvalue = $EXTRACT(line,1,lline)
+        //set readvalue = $EXTRACT(line,1,lline)
+        set readvalue = $LISTFROMSTRING(row.WholeLine, " ")
         write readvalue ,!
         do row.%Save()
         
