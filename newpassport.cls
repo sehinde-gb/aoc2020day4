@@ -32,6 +32,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write line ,!
         set extracted = $EXTRACT(line,1,lline)
         set formfeed=$CHAR(10)
+        write
         set obj.WholeLine = extracted
         //write !,$find(obj.WholeLine, "ecl:gry")
         write obj.WholeLine
