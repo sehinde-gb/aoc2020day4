@@ -57,11 +57,11 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
                 set passlist=$LISTFROMSTRING(row.WholeLine, "  ")
                 write passlist ,!
                 set status = row.%Save()
-                write status ,!
+                //write status ,!
                 write !, "row saved"
                 }
                 
-                write !, "now"
+                write status ,!
             }
             //set passlist=$LISTFROMSTRING(line, " ")
             //write !,"Element:",$LIST(passlist,1)
