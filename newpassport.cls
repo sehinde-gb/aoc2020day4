@@ -71,7 +71,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     }
         set status = row.%Save()
         write status ,!
-        
+        write row
         set row.ObjectFound=1
 }
 
