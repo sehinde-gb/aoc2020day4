@@ -55,7 +55,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             For i=1:1:lline {
                 set row.WholeLine = line
                 set passlist=$LISTFROMSTRING(row.WholeLine, "  ")
-                write row.WholeLine ,!
+                write passlist ,!
                 set status = row.%Save()
                 write status ,!
                 write !, "row saved"
