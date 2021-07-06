@@ -52,9 +52,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set readvalue = $EXTRACT(line,1,lline)
         //set test = $LISTFROMSTRING(line)
         
-        //write status ,!
-        
-        
+        write readvalue ,!
         
     }
         
@@ -112,6 +110,9 @@ Storage Default
 <Type>%Storage.Persistent</Type>
 }
 }
+
+
+
 
 
 }
