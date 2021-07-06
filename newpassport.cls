@@ -51,7 +51,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set lline = $LENGTH(line)
         //set extracted = $EXTRACT(line,1,lline)
         //write extracted ,! 
-        set readvalue = $LISTFROMSTRING(line)
+        set readvalue = $LISTFROMSTRING(line,"")
         WRITE !,"1st element: ",$LIST(readvalue,1)
         
         
