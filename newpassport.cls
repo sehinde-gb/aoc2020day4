@@ -46,13 +46,14 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set validlist=0
 
         set line = file.ReadLine()
-        write !, "nline loop started"
+        //write !, "nline loop started"
         set row = ##class(New.Passport).%New() 
         set lline = $LENGTH(line)
         set row.WholeLine = line
         set readvalue = $EXTRACT(line,1,lline)
         write readvalue ,!
         do row.%Save()
+        
         //set status = row.%Save()
         //write !, "status is:"
         //write status ,!
