@@ -29,17 +29,12 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         set lline = $LENGTH(line)
         //write !, "while loop started"
-        
-        set a=$CHAR(32)
-        set colorlist="openecl:gry pid:860033327 eyr:2020 hcl:#fffffd"
-        SET extract1=$PIECE(colorlist,a)
-        write extract1
-
         //set extracted = $EXTRACT(line,1,lline)
-        //set pieced = $PIECE(line," ",1,lline)
+        
+        set pieced = $PIECE(line," ",1,lline)
         //set extract1=$PIECE(pieced," ",3)
         //write extract1    
-        //write pieced ,!
+        write pieced ,!
         //set obj.WholeLine = extracted
         //write obj.WholeLine
         
