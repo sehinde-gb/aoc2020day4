@@ -23,7 +23,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set sc = file.LinkToFile(dir)
     //write sc ,!
     WRITE !,*32
-    WRITE $X,"/",$CHAR(8)
+    WRITE !,$X
+   
     
     WHILE ('file.AtEnd) {
         set obj = ##class(New.Passport).%New()
