@@ -29,7 +29,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         set lline = $LENGTH(line)
         //write !, "while loop started"
-        write line ,!
+        //write line ,!
         set extracted = $EXTRACT(line,1,lline)
         write extracted ,!
         //set obj.WholeLine = extracted
