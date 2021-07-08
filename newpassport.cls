@@ -32,7 +32,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         
         //set extracted = $EXTRACT(line,1,lline)
         set pieced = $PIECE(line," ",1,lline)
-        set extract1=$PIECE(pieced," ",2)
+        set extract1=$PIECE(pieced," ",2,3)
         write extract1    
         //write pieced ,!
         //set obj.WholeLine = extracted
