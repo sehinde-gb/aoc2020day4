@@ -29,15 +29,14 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         set lline = $LENGTH(line)
         //write !, "while loop started"
-        set extracted = $EXTRACT(line,1,lline)
+        //set extracted = $EXTRACT(line,1,lline)
         
-        //set pieced = $PIECE(line," ",1,lline)
+        set pieced = $PIECE(line," ",1,8)
           
-        //write pieced ,!
+        write pieced ,!
         //write extracted
 
-        set passport1 = $EXTRACT(extracted,1,50) 
-        write passport1
+        
         //set obj.WholeLine = extracted
         //write obj.WholeLine
         
