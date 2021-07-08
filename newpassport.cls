@@ -30,15 +30,15 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj = ##class(New.Passport).%New()
         set line = file.ReadLine()
         set lline = $LENGTH(line)
-        write !, "while loop started"
+        
         //set extracted = $EXTRACT(line,1,lline)
         
-        write line,!
-        //set pieced = $PIECE(line," ",1,8)
+        //write line,!
+        set pieced = $PIECE(line," ",lline)
         //SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
         //WRITE $PIECE(colorlist," ",*),!  
 
-        //write extracted
+        write pieced
 
         
         //set obj.WholeLine = extracted
