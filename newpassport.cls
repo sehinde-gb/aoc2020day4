@@ -30,7 +30,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj = ##class(New.Passport).%New()
         set line = file.ReadLine()
         set lline = $LENGTH(line)
-        //write !, "while loop started"
+        write !, "while loop started"
         //set extracted = $EXTRACT(line,1,lline)
         
         write line,!
