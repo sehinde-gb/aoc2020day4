@@ -31,15 +31,15 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         set lline = $LENGTH(line)
         
-        
-        
         //write line,!
-        set pieced = $PIECE(line," ",lline)
-        //set extracted = $EXTRACT(line,1,lline)
+        //set extract = $PIECE(line," ",1,1)
+        //write extract ,!
+        set extracted = $EXTRACT(line,1,lline)
+        write extracted,!
         //SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
         //WRITE $PIECE(colorlist," ",*),!  
 
-        write pieced,!
+        //write pieced,!
 
         
         //set obj.WholeLine = extracted
