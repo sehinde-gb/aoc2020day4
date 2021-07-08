@@ -32,9 +32,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //set extracted = $EXTRACT(line,1,lline)
         
         //set pieced = $PIECE(line," ",1,8)
-        SET colorlist="Red,Green,Blue,Yellow,Orange,Black"  
-        WRITE $PIECE(colorlist,","),!  
-        
+        SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
+        WRITE $PIECE(colorlist,",",4),!  
+
         //write extracted
 
         
