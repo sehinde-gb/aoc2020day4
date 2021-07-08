@@ -31,9 +31,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, "while loop started"
         //set extracted = $EXTRACT(line,1,lline)
         
+        write line,!
         //set pieced = $PIECE(line," ",1,8)
-        SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
-        WRITE $PIECE(colorlist," ",2),!  
+        //SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
+        //WRITE $PIECE(colorlist," ",*),!  
 
         //write extracted
 
