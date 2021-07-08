@@ -28,25 +28,21 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set obj = ##class(New.Passport).%New()
         set line = file.ReadLine()
         set lline = $LENGTH(line)
-        //write !, "nline loop started"
-        //write line ,!
+        write !, "while loop started"
+        write line ,!
         set extracted = $EXTRACT(line,1,lline)
-        //write extracted ,!
-        set obj.WholeLine = extracted
-        write obj.WholeLine
+        write extracted ,!
+        //set obj.WholeLine = extracted
+        //write obj.WholeLine
         
-        //set extralist=$LISTFROMSTRING(extracted," ")
-        //write extralist ,!
-
-        //write !,"4th",$LIST(extralist,1)
         //do obj.%Save()
         
         //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
-        write !, "Extract:"
-        set passport1 = $EXTRACT(extracted,1,77)
+        //write !, "Extract:"
+        //set $EXTRACT(extracted,1,77)=test
 
         //write obj.WholeLine
         
