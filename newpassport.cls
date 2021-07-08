@@ -22,7 +22,8 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
     //write sc ,!
-    
+    WRITE !,*32
+    WRITE !,$X
     
     WHILE ('file.AtEnd) {
         set obj = ##class(New.Passport).%New()
