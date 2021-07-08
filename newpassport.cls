@@ -31,9 +31,10 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         //write !, "while loop started"
         //set extracted = $EXTRACT(line,1,lline)
         
-        set pieced = $PIECE(line," ",1,8)
-          
-        write pieced ,!
+        //set pieced = $PIECE(line," ",1,8)
+        SET colorlist="Red,Green,Blue,Yellow,Orange,Black"  
+        WRITE $PIECE(colorlist,","),!  
+        
         //write extracted
 
         
