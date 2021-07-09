@@ -31,25 +31,45 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         set line = file.ReadLine()
         set lline = $LENGTH(line)
         
+
+        SET delim=" "
+        SET countdown=$LENGTH(line,delim)
+        //write countdown,!
+        SET countup=1
+        FOR reps=countdown:-1:1 {
+            SET extract=$PIECE(line,delim,countup)
+            
+            WRITE !,countup," ",extract
+            SET countup=countup+1
+            do obj.%Save()
+            //do obj.%Save()
+            //write obj.WholeLine ,!
+        }
+        WRITE !,"All done!"
+
+        
+        //write obj.WholeLine
+        
+        
+        //write "Object ID: ",obj.%Id(),!
         //write line,!
         //set extract = $PIECE(line," ",1,1)
         //write extract ,!
-        set extracted = $EXTRACT(line,1,lline)
-        write extracted,!
+        //set extracted = $EXTRACT(line,1,lline)
+        //write extracted,!
+        //set new = $EXTRACT(extracted,1,30)
+        ///write new,!
         //SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
         //WRITE $PIECE(colorlist," ",*),!  
 
         //write pieced,!
 
         
-        //set obj.WholeLine = extracted
-        //write obj.WholeLine
         
-        //do obj.%Save()
-        //write "Object ID: ",obj.%Id(),!
         //Write !, "Import Complete" 
         
     }
+        
         //write !, "Extract:"
         //set $EXTRACT(extracted,1,77)=test
 
