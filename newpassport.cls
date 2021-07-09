@@ -42,41 +42,20 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
             WRITE !,countup," ",extract
             SET countup=countup+1
             do obj.%Save()
-            //do obj.%Save()
-            //write obj.WholeLine ,!
+            
+            write obj.WholeLine ,!
         }
         WRITE !,"All done!"
-
         
-        //write obj.WholeLine
-        
-        
-        //write "Object ID: ",obj.%Id(),!
-        //write line,!
-        //set extract = $PIECE(line," ",1,1)
-        //write extract ,!
-        //set extracted = $EXTRACT(line,1,lline)
-        //write extracted,!
-        //set new = $EXTRACT(extracted,1,30)
-        ///write new,!
-        //SET colorlist="ecl:gry pid:860033327 eyr:2020 hcl:#fffffd"  
-        //WRITE $PIECE(colorlist," ",*),!  
-
-        //write pieced,!
-
-        
-        
-        //Write !, "Import Complete" 
+        write "Object Saved under ID: ",obj.%Id(),!
+    
         
     }
+        Write !, "Import Complete" 
         
-        //write !, "Extract:"
-        //set $EXTRACT(extracted,1,77)=test
-
-        //write obj.WholeLine
         
         //set status = obj.%Save()
-        //write obj.WholeLine ,!
+        write obj.WholeLine ,!
         //do file.Close()
 }
 
