@@ -4,7 +4,7 @@ Class New.Passport Extends %Persistent
 /// Description
 Property WholeLine As %String;
 
-Property ObjectFound As %Integer;
+// do the same for all other fields
 
 ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
@@ -24,41 +24,49 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     //write sc ,!
     WRITE !,*32
     WRITE !,$X
-   
-    
-    WHILE ('file.AtEnd) {
-        set obj = ##class(New.Passport).%New()
-        set line = file.ReadLine()
-        set lline = $LENGTH(line)
+    set line = file.ReadLine()
+    set newlist=$LISTFROMSTRING(line," ")
+    write !,"3rd element: ",$LIST(newlist,3)
+
+#;     WHILE ('file.AtEnd) {
+#;         set obj = ##class(New.Passport).%New()
+#;         set line = file.ReadLine()
+#;         set lline = $LENGTH(line)
+#;         //write line ,!
+
+#;         set delim=" "
+#;         set countdown=$LENGTH(line,delim)
+#;         //write countdown,!
+        
         
 
-        SET delim=" "
-        SET countdown=$LENGTH(line,delim)
-        //write countdown,!
-        SET countup=1
-        FOR reps=countdown:-1:1 {
-            SET extract=$PIECE(line,delim,countup)
+#;         set countup=1
+#;         //for reps=countdown:-1:1 {
+#;             //write line ,!
             
-            WRITE !,countup," ",extract
-            SET countup=countup+1
-            do obj.%Save()
+#;             //SET extract=$PIECE(line,delim,countup)
             
-            write obj.WholeLine ,!
-        }
-        WRITE !,"All done!"
+#;             //WRITE !,countup," ",extract
+            
+
+#;             //SET countup=countup+1
+#;             //do obj.%Save()
+           
+#;             //write obj.WholeLine ,!
+#;         //}
+#;         //WRITE !,"All done!"
         
-        write "Object Saved under ID: ",obj.%Id(),!
-    
-        
-    }
-        Write !, "Import Complete" 
+#;         //write "Object Saved under ID: ",obj.%Id(),!
+#; }
+#;         Write !, "Import Complete" 
         
         
-        //set status = obj.%Save()
-        write obj.WholeLine ,!
-        //do file.Close()
+#;         //set status = obj.%Save()
+#;         //write obj.WholeLine ,!
+#;         //do file.Close()
 }
 
+/// Description
 Storage Default
 {
 <Data name="PassportDefaultData">
@@ -104,10 +112,35 @@ Storage Default
 </Data>
 <DataLocation>^New.PassportD</DataLocation>
 <DefaultData>PassportDefaultData</DefaultData>
+<Description>
+<![CDATA[Description]]></Description>
 <IdLocation>^New.PassportD</IdLocation>
 <IndexLocation>^New.PassportI</IndexLocation>
 <StreamLocation>^New.PassportS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
+}
+
+Storage Default
+{
+<Data name="PassportDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>WholeLine</Value>
+</Value>
+</Data>
+<DataLocation>^New.PassportD</DataLocation>
+<DefaultData>PassportDefaultData</DefaultData>
+<IdLocation>^New.PassportD</IdLocation>
+<IndexLocation>^New.PassportI</IndexLocation>
+<StreamLocation>^New.PassportS</StreamLocation>
+<Type>%Storage.Persistent</Type>
+}
+
+
+
+
 
 }
