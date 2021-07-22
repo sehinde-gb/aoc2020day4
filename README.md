@@ -186,4 +186,4 @@ Project Link: [https://github.com/sehinde-gb/aoc2020day4](https://github.com/seh
 [license-shield]: https://img.shields.io/github/license/sehinde-gb/repo.svg?style=for-the-badge
 [license-url]: https://github.com/sehinde-gb/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/sehinde-gb
+[linkedin-url]: https://www.linkedin.com/in/sehinde-raji-319457b/
