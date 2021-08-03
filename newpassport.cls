@@ -17,14 +17,18 @@ ClassMethod ImportPassports(dir As %String = "/usr/local/day4.txt")
     
     set count=1
     /// loop to go through each line and save it to a global that increments
+    
     WHILE ('file.AtEnd) {
         set delim=" "
         set line = file.ReadLine()
+        
+        
+        write !, "Loop started"
         set ^namelist(count)=$LISTFROMSTRING(line, delim)
         set countdown=$LENGTH(line,delim)
         set count=count+1
-    }
-        write !, "Import process complete"
+
+        
         write !,*32
         write !, "Double checking to see if the fields are set"
         write !,*32
@@ -32,21 +36,25 @@ ClassMethod ImportPassports(dir As %String = "/usr/local/day4.txt")
         write !, "2nd element of 4th global ", $LIST(^namelist(4),2)
         write !, "1st element of 5th global", $LIST(^namelist(5),1)
         write !, "1st element of 8th global", $LIST(^namelist(8),1)
+    
+        write !, "Import process complete"
+    }
 }
 
 ClassMethod ProcessPassports()
 {
-                /// Concatenate and save the globals in to one array and then use an if statement
-                /// to determine if the lists are identical or not.
-                /// if they are identical then show a message to the screen
-
+                
                 write "Passport 1",!
                 write !,*32
+                /// Concatenate and save the globals in to one array 
                 set passport1=^namelist(1)_^namelist(2)
+                /// Build the list
                 set lista=$LISTBUILD("ecl:gry", "pid:860033327", "eyr:2020", "hcl:#fffffd","byr:1937", "iyr:2017", "cid:147", "hgt:183cm")
+                /// Comparison to check to see if the lists are the same
                 if passport1=lista{write "The list's are identical",!}
                 ELSE {write "The list's are not identical",!}
                 write !,*32
+                /// Explain why the lists are not the same
                 write "List Length: ",$LISTLENGTH(passport1)
                 write !,*32
                 write !,"Your passport is valid" 
