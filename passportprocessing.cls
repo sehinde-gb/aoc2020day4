@@ -1,7 +1,7 @@
-Class New.Passport Extends %Persistent
+Class Passport.Processing Extends %Persistent
 {
 
-ClassMethod ImportPassports(dir As %String = "/usr/local/day4.txt")
+ClassMethod Import(dir As %String = "/usr/local/day4.txt")
 {
     // Open my text file and check it exists
     IF ##class(%File).Exists(dir) '=1 {
@@ -14,19 +14,17 @@ ClassMethod ImportPassports(dir As %String = "/usr/local/day4.txt")
     set file = ##class(%Stream.FileCharacter).%New()
     // create a new variable called sc
     set sc = file.LinkToFile(dir)
-    
     set count=1
     /// loop to go through each line and save it to a global that increments
     
-    WHILE ('file.AtEnd) {
+    WHILE ('file.AtEnd) && ('file '= "")
+    {
         set delim=" "
         set line = file.ReadLine()
-        
-        
         write !, "Loop started"
         set ^namelist(count)=$LISTFROMSTRING(line, delim)
         set countdown=$LENGTH(line,delim)
-        set count=count+1
+        set count=$INCREMENT(count)
 
         
         write !,*32
@@ -41,7 +39,7 @@ ClassMethod ImportPassports(dir As %String = "/usr/local/day4.txt")
     }
 }
 
-ClassMethod ProcessPassports()
+ClassMethod Process()
 {
                 
                 write "Passport 1",!
@@ -100,27 +98,6 @@ ClassMethod ProcessPassports()
                 ELSE {write "The list's are not identical",!}
                 write "List Length: ",$LISTLENGTH(passport4)
                 if $LISTFIND(listc,"cid:")=0 && $LISTFIND(listc,"byr")=0{ write !,*32 write "Your passport is missing the cid & byr so your passport is invalid" }
-}
-
-Storage Default
-{
-<Data name="PassportDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>WholeLine</Value>
-</Value>
-<Value name="3">
-<Value>Passport2</Value>
-</Value>
-</Data>
-<DataLocation>^New.PassportD</DataLocation>
-<DefaultData>PassportDefaultData</DefaultData>
-<IdLocation>^New.PassportD</IdLocation>
-<IndexLocation>^New.PassportI</IndexLocation>
-<StreamLocation>^New.PassportS</StreamLocation>
-<Type>%Storage.Persistent</Type>
 }
 
 }
