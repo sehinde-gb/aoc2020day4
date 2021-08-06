@@ -17,16 +17,22 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
     set count=1
     /// loop to go through each line and save it to a global that increments
     
-    WHILE ('file.AtEnd) && ('file '= "")
+    WHILE ('file.AtEnd) 
     {
         set delim=" "
         set line = file.ReadLine()
         write !, "Loop started"
+        write *32
+        write line,!
         set ^namelist(count)=$LISTFROMSTRING(line, delim)
         set countdown=$LENGTH(line,delim)
         set count=$INCREMENT(count)
 
         
+       
+    
+        
+    }
         write !,*32
         write !, "Double checking to see if the fields are set"
         write !,*32
@@ -34,9 +40,9 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt")
         write !, "2nd element of 4th global ", $LIST(^namelist(4),2)
         write !, "1st element of 5th global", $LIST(^namelist(5),1)
         write !, "1st element of 8th global", $LIST(^namelist(8),1)
-    
         write !, "Import process complete"
-    }
+        write *32
+        do ##class(Passport.Processing).Process()
 }
 
 ClassMethod Process()
@@ -98,6 +104,21 @@ ClassMethod Process()
                 ELSE {write "The list's are not identical",!}
                 write "List Length: ",$LISTLENGTH(passport4)
                 if $LISTFIND(listc,"cid:")=0 && $LISTFIND(listc,"byr")=0{ write !,*32 write "Your passport is missing the cid & byr so your passport is invalid" }
+}
+
+Storage Default
+{
+<Data name="ProcessingDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+</Data>
+<DataLocation>^Passport.ProcessingD</DataLocation>
+<DefaultData>ProcessingDefaultData</DefaultData>
+<IdLocation>^Passport.ProcessingD</IdLocation>
+<IndexLocation>^Passport.ProcessingI</IndexLocation>
+<StreamLocation>^Passport.ProcessingS</StreamLocation>
+<Type>%Storage.Persistent</Type>
 }
 
 }
