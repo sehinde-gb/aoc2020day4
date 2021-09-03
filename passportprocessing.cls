@@ -52,7 +52,7 @@ ClassMethod Import(dir As %String = "/usr/local/day4.txt") As %Status
         do ..FirstPassportObject()
 }
 
-/// Description
+/// Compare listx with concatenated and if the lists are identical output a message
 ClassMethod FirstPassportString() As %Status
 {
     write "First Passport as a String",!
@@ -82,7 +82,7 @@ ClassMethod FirstPassportString() As %Status
     do ..SecondPassportString()
 }
 
-/// Description
+/// set up a passport object and then compare the object properties with the concatenated list
 ClassMethod FirstPassportObject() As %Status
 {
 
@@ -113,7 +113,7 @@ ClassMethod FirstPassportObject() As %Status
     do ..SecondPassportObject()
 }
 
-/// Description
+/// Compare listx with concatenated and if the lists are identical output a message
 ClassMethod SecondPassportString() As %Status
 {
     write !,*32
@@ -140,7 +140,7 @@ ClassMethod SecondPassportString() As %Status
     do ..ThirdPassportString()
 }
 
-/// Description
+/// set up a passport object and then compare the object properties with the concatenated list
 ClassMethod SecondPassportObject() As %Status
 {
    write !,*32
@@ -168,7 +168,7 @@ ClassMethod SecondPassportObject() As %Status
     do ..ThirdPassportObject()
 }
 
-/// Description
+/// Compare listx with concatenated and if the lists are identical output a message
 ClassMethod ThirdPassportString() As %Status
 {
     write !,*32
@@ -189,6 +189,7 @@ ClassMethod ThirdPassportString() As %Status
     do ..FourthPassportString()
 }
 
+/// set up a passport object and then compare the object properties with the concatenated list
 ClassMethod ThirdPassportObject() As %Status
 {
     write !,*32
@@ -210,7 +211,7 @@ ClassMethod ThirdPassportObject() As %Status
     do ..FourthPassportObject()
 }
 
-/// Description
+/// Compare listx with concatenated and if the lists are identical output a message
 ClassMethod FourthPassportString() As %Status
 {
    write !,*32
@@ -235,6 +236,7 @@ ClassMethod FourthPassportString() As %Status
     }
 }
 
+/// set up a passport object and then compare the object properties with the concatenated list
 ClassMethod FourthPassportObject() As %Status
 {
    write !,*32
